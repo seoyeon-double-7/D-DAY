@@ -15,7 +15,8 @@ function LoginPage() {
 
     return (
         <div>
-          <form onSubmit={onSubmitHandler}>
+            로그인 페이지
+          {/* <form onSubmit={onSubmitHandler}>
             <label>Email</label>
             <input type="email" value={Email} onChange={onEmailHandler} />
             <label>Password</label>
@@ -23,7 +24,7 @@ function LoginPage() {
     
             <br />
             <button>Login</button>
-          </form>
+          </form> */}
         </div>
       );
 }

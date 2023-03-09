@@ -1,0 +1,9 @@
+* {
+  box-sizing: border-box;
+  /* background-color: rgb(209, 187, 139); */
+}
+
+.app {
+  width: 100%;
+  height: 100%;
+}
