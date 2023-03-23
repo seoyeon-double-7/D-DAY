@@ -4,9 +4,10 @@ import HomePage from "./pages/HomePage/HomePage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import FootPrintPage from "./pages/FootPrintPage/FootPrintPage";
-import Nav from "./components/NavBar/NavBar";
+import Nav from "./Layout/Nav";
 
 import "./styles/App.css"
+import Footer from "./Layout/Footer";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/footprint" element={<FootPrintPage/>}></Route>
       </Routes>
 
+      <Footer/>
       
 
       </BrowserRouter>
