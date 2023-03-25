@@ -1,22 +1,21 @@
-import { useState } from "react";
+// import { useState } from "react";
 
 function LoginPage() {
+  // const [name, setName] = useState("");
+  // const [Pwd, setPwd] = useState("");
 
-    const [name, setName] = useState("");
-    const [Pwd, setPwd] = useState("");
-    
-    const onNameHandler = (event)=>{
-        setName(event.currentTarget.value);
-    }
+  // const onNameHandler = (event)=>{
+  //     setName(event.currentTarget.value);
+  // }
 
-    const onPwdHandler = (event)=>{
-        setPwd(event.currentTarget.value);
-    }
+  // const onPwdHandler = (event)=>{
+  //     setPwd(event.currentTarget.value);
+  // }
 
-    return (
-        <div>
-            로그인 페이지
-          {/* <form onSubmit={onSubmitHandler}>
+  return (
+    <div>
+      로그인 페이지
+      {/* <form onSubmit={onSubmitHandler}>
             <label>Email</label>
             <input type="email" value={Email} onChange={onEmailHandler} />
             <label>Password</label>
@@ -25,8 +24,8 @@ function LoginPage() {
             <br />
             <button>Login</button>
           </form> */}
-        </div>
-      );
+    </div>
+  );
 }
 
 export default LoginPage;
