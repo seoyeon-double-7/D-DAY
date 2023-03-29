@@ -1,15 +1,14 @@
-import "../../styles/HomePage.css"
+import "../../styles/HomePage.css";
 
 function HomePage() {
-
-    return(
-        <div>
-            <button >MORNING</button>
-            <button>AFTERNOON</button>
-            <button>DINNER</button>
-            <button>NIGHT</button>
-        </div>
-    )
+  return (
+    <div className="home">
+      <button className="home-item">MORNING</button>
+      <button className="home-item">AFTERNOON</button>
+      <button className="home-item">DINNER</button>
+      <button className="home-item">NIGHT</button>
+    </div>
+  );
 }
 
 export default HomePage;
