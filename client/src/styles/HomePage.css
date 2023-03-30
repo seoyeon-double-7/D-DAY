@@ -1,6 +1,14 @@
-/* button{
-     width: 200px; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-} */
+button {
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home {
+  height: 700px;
+}
+
+.home-item {
+  margin: 100px;
+}
