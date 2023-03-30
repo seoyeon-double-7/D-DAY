@@ -21,15 +21,23 @@ app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
-app.post("/register", (req, res) => {
+app.post("/register", async (req, res) => {
   // 회원가입 정보 client가져와서 db에 넣어주기
   const user = new User(req.body);
-  user.save((err, doc) => {
-    if (err) return res.json({ success: false, err });
-    return res.status(200).json({
-      success: true,
+  await user
+    .save()
+    .then(() => {
+      res.status(200).json({
+        success: true,
+      });
+    })
+    .catch((err) => {
+      console.error(err);
+      res.json({
+        success: false,
+        err: err,
+      });
     });
-  });
 });
 
 app.listen(port, () => {
