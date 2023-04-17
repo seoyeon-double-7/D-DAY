@@ -40,6 +40,33 @@ app.post("/register", async (req, res) => {
     });
 });
 
+app.post("/login", (req, res) => {
+  // 요청된 이메일을 데이터베이스 찾기
+  User.findOne({ nickname: req.body.nickname })
+    .then((user) => {
+      if(user){
+        return res.json({
+          loginSuccess: true,
+          messsage: "로그인 성공",
+        })
+      }
+      else if (!user) {
+        return res.json({
+          loginSuccess: false,
+          messsage: "제공된 이메일에 해당하는 유저가 없습니다.",
+        });
+      }
+
+//       user.comparePassword(req.body.password, (err, isMatch) => {
+//         if(!isMatch) return res.json({loginSuccess: false, messsage: "비밀번호가 틀렸습니다."})
+// // Password가 일치하다면 토큰 생성
+//     })
+  })
+    .catch((err) => {
+      return res.status(400).send(err);
+    });
+});
+
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });
