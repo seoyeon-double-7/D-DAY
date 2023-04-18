@@ -1,9 +1,12 @@
+import "../styles/nav.css"
+
 function Footer(){
     return(
-        <footer>
-            <h2>footer</h2>
-        </footer>
-    )
+        <div>
+            <div className="opening"></div>
+            <div className="ending"></div>
+        </div>
+    );
 }
 
 export default Footer;

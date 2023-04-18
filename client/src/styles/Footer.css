@@ -1,0 +1,23 @@
+.opening{
+    position: absolute;
+    width: 9%;
+    height: 9%;
+    top: 97.5%;
+    left: 8%;
+    transform: translate(-50%, -50%);
+    background-image: url('../images/opening.png');
+    background-size: contain; 
+    background-repeat: no-repeat;
+  }
+  
+  .ending{
+    position: absolute;
+    width: 7%;
+    height: 7%;
+    top: 96.5%;
+    left: 92%;
+    transform: translate(-50%, -50%);
+    background-image: url('../images/ending.png');
+    background-size: contain; 
+    background-repeat: no-repeat;
+  }
