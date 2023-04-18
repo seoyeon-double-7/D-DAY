@@ -1,35 +1,47 @@
-/* nav {
-    /* background-color: rgb(226, 217, 204);  
-    display: flex;
-    margin-top: 20px;
-    margin-bottom: 20px;
-  }
-  
-  nav > div {
-    width: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  } */
-
-
-nav {
-    background-color: rgb(237, 220, 201);
-    width: 100%;
-    display: flex;
-    padding: 10px;
-
-    text-align: center;
-    align-items: center;
-    font-size: 18px;
-  margin: auto;
-  overflow: hidden;
-  /* padding-top: 30px; */
-  padding-bottom: 15px;
+.logo{
+  position: absolute;
+  width: 14%;
+  height: 14%;
+  top: 11%;
+  left: 9%;
+  transform: translate(-50%, -50%);
+  background-image: url('../images/logo.png');
+  background-size: contain; 
+  background-repeat: no-repeat;
 }
 
-.item {
-    margin-left: 20px;
-    text-decoration: none;
-    color: black;
+.footprint{
+  position: absolute;
+  width: 8%;
+  height: 8%;
+  top: 7%;
+  left: 80%;
+  transform: translate(-50%, -50%);
+  background-image: url('../images/footprint.png');
+  background-size: contain; 
+  background-repeat: no-repeat;
+}
+
+.sign-in{
+  position: absolute;
+  width: 4.5%;
+  height: 4.5%;
+  top: 8%;
+  left: 85.5%;
+  transform: translate(-50%, -50%);
+  background-image: url('../images/login.png');
+  background-size: contain; 
+  background-repeat: no-repeat;
+}
+
+.sign-up{
+  position: absolute;
+  width: 6%;
+  height: 6%;
+  top: 8.7%;
+  left: 93%;
+  transform: translate(-50%, -50%);
+  background-image: url('../images/signup.png');
+  background-size: contain; 
+  background-repeat: no-repeat;
 }
