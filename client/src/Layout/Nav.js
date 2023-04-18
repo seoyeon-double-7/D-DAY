@@ -7,7 +7,7 @@ function Nav() {
     <nav>
        <div className="logo"></div>
 
-     <div>
+      <div>
       <div className="footprint"></div>
 
       <div className="sign-in"></div>
