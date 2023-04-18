@@ -1,79 +1,83 @@
 .home {
   width: 100vw;
   height: 100vh;
-  background-image: url('../images/homebackground.png');
-  background-size: cover; 
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url("../images/homebackground.png");
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  background-attachment: fixed;
 }
 
-.map-morning{
+.map-morning {
   position: absolute;
   width: 17%;
   height: 17%;
   top: 46%;
   left: 20%;
   transform: translate(-50%, -50%);
-  background-image: url('../images/morning.png');
-  background-size: contain; 
+  background-image: url("../images/morning.png");
+  background-size: contain;
   background-repeat: no-repeat;
 }
 
-.map-afternonn{
+.map-afternonn {
   position: absolute;
   width: 20.5%;
   height: 20.5%;
   top: 81%;
   left: 37%;
   transform: translate(-50%, -50%);
-  background-image: url('../images/afternonn.png');
-  background-size: contain; 
+  background-image: url("../images/afternonn.png");
+  background-size: contain;
   background-repeat: no-repeat;
 }
 
-.map-dinner{
+.map-dinner {
   position: absolute;
   width: 14%;
   height: 14%;
   top: 69%;
   left: 72.5%;
   transform: translate(-50%, -50%);
-  background-image: url('../images/diner.png');
-  background-size: contain; 
+  background-image: url("../images/diner.png");
+  background-size: contain;
   background-repeat: no-repeat;
 }
 
-.map-night{
+.map-night {
   position: absolute;
   width: 12%;
   height: 12%;
   top: 38.5%;
   left: 76.5%;
   transform: translate(-50%, -50%);
-  background-image: url('../images/night.png');
-  background-size: contain; 
+  background-image: url("../images/night.png");
+  background-size: contain;
   background-repeat: no-repeat;
 }
-.opening{
+.opening {
   position: absolute;
   width: 9%;
   height: 9%;
   top: 97.5%;
   left: 8%;
   transform: translate(-50%, -50%);
-  background-image: url('../images/opening.png');
-  background-size: contain; 
+  background-image: url("../images/opening.png");
+  background-size: contain;
   background-repeat: no-repeat;
 }
 
-.ending{
+.ending {
   position: absolute;
   width: 7%;
   height: 7%;
   top: 96.5%;
   left: 92%;
   transform: translate(-50%, -50%);
-  background-image: url('../images/ending.png');
-  background-size: contain; 
+  background-image: url("../images/ending.png");
+  background-size: contain;
   background-repeat: no-repeat;
 }
