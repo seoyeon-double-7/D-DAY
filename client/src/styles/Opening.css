@@ -1,0 +1,37 @@
+.bg{
+    position: relative;
+    
+    height: 100vh;
+    background-size: contain; 
+    background-repeat: no-repeat;
+
+    /* 이미지 비율대로 커지거나 작아지게 하는 속성 */
+    width: 100%;
+    height: auto;
+ 
+}
+
+.textbox{
+    position: absolute;
+    width: 100%;
+
+    left: 0;
+    bottom: 0%;
+    z-index: 1; 
+}
+
+.next{
+    position: absolute;
+    height: 4.5%;
+    top: 88%;
+    left: 75%;
+    z-index: 2; 
+}
+
+.namebox{
+    position: absolute;
+    height: 6%;
+    top: 65%;
+    left: 20%;
+    z-index: 2; 
+}
