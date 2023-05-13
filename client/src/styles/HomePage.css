@@ -1,4 +1,5 @@
 .home {
+  position: relative;
   width: 100vw;
   height: 100vh;
   background-image: url('../images/homebackground.png');
@@ -11,9 +12,8 @@
   position: absolute;
   width: 17%;
   height: 17%;
-  top: 46%;
-  left: 20%;
-  transform: translate(-50%, -50%);
+  top: 39%;
+  left: 11%;
   background-image: url('../images/morning.png');
   background-size: contain; 
   background-repeat: no-repeat;
@@ -23,9 +23,8 @@
   position: absolute;
   width: 20.5%;
   height: 20.5%;
-  top: 81%;
-  left: 37%;
-  transform: translate(-50%, -50%);
+  top: 69%;
+  left: 24%;
   background-image: url('../images/afternonn.png');
   background-size: contain; 
   background-repeat: no-repeat;
@@ -37,7 +36,7 @@
   height: 14%;
   top: 69%;
   left: 72.5%;
-  transform: translate(-50%, -50%);
+  /* transform: translate(-50%, -50%); */
   background-image: url('../images/diner.png');
   background-size: contain; 
   background-repeat: no-repeat;
@@ -49,7 +48,7 @@
   height: 12%;
   top: 38.5%;
   left: 76.5%;
-  transform: translate(-50%, -50%);
+  /* transform: translate(-50%, -50%); */
   background-image: url('../images/night.png');
   background-size: contain; 
   background-repeat: no-repeat;
@@ -58,9 +57,9 @@
   position: absolute;
   width: 9%;
   height: 9%;
-  top: 97.5%;
-  left: 8%;
-  transform: translate(-50%, -50%);
+  top: 93.5%;
+  left: 6%;
+  /* transform: translate(-50%, -50%); */
   background-image: url('../images/opening.png');
   background-size: contain; 
   background-repeat: no-repeat;
@@ -70,10 +69,18 @@
   position: absolute;
   width: 7%;
   height: 7%;
-  top: 96.5%;
-  left: 92%;
-  transform: translate(-50%, -50%);
+  top: 93.5%;
+  left: 87%;
   background-image: url('../images/ending.png');
   background-size: contain; 
   background-repeat: no-repeat;
 }
+
+.map:hover{
+  transform: scale(1.5);
+}
+
+.map{
+  transition: 1s ease-in-out;
+}
+
