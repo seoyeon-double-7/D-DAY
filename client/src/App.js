@@ -4,10 +4,10 @@ import HomePage from "./pages/HomePage/HomePage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import FootPrintPage from "./pages/FootPrintPage/FootPrintPage";
-import Nav from "./Layout/Nav";
 
 import "./styles/App.css"
 import Footer from "./Layout/Footer";
+import Opening from "./Layout/Opening";
 
 function App() {
   return (
@@ -20,9 +20,10 @@ function App() {
         <Route path="/login" element={<LoginPage/>}></Route>
         <Route path="/register" element={<RegisterPage/>}></Route>
         <Route path="/footprint" element={<FootPrintPage/>}></Route>
+        <Route path="/opening" element={<Opening/>}></Route>
       </Routes>
 
-      <Footer/>
+    
       
 
       </BrowserRouter>
