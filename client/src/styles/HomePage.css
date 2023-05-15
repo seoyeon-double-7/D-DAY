@@ -16,18 +16,10 @@
   position: absolute;
   width: 17%;
   height: 17%;
-<<<<<<< HEAD
   top: 39%;
   left: 11%;
-  background-image: url('../images/morning.png');
-  background-size: contain; 
-=======
-  top: 46%;
-  left: 20%;
-  transform: translate(-50%, -50%);
   background-image: url("../images/morning.png");
   background-size: contain;
->>>>>>> ca2d89f5fca776829ca4c70a7daf67e41d7e4cba
   background-repeat: no-repeat;
 }
 
@@ -35,18 +27,10 @@
   position: absolute;
   width: 20.5%;
   height: 20.5%;
-<<<<<<< HEAD
   top: 69%;
   left: 24%;
-  background-image: url('../images/afternonn.png');
-  background-size: contain; 
-=======
-  top: 81%;
-  left: 37%;
-  transform: translate(-50%, -50%);
   background-image: url("../images/afternonn.png");
   background-size: contain;
->>>>>>> ca2d89f5fca776829ca4c70a7daf67e41d7e4cba
   background-repeat: no-repeat;
 }
 
@@ -56,15 +40,9 @@
   height: 14%;
   top: 69%;
   left: 72.5%;
-<<<<<<< HEAD
   /* transform: translate(-50%, -50%); */
-  background-image: url('../images/diner.png');
-  background-size: contain; 
-=======
-  transform: translate(-50%, -50%);
   background-image: url("../images/diner.png");
   background-size: contain;
->>>>>>> ca2d89f5fca776829ca4c70a7daf67e41d7e4cba
   background-repeat: no-repeat;
 }
 
@@ -74,34 +52,23 @@
   height: 12%;
   top: 38.5%;
   left: 76.5%;
-<<<<<<< HEAD
   /* transform: translate(-50%, -50%); */
-  background-image: url('../images/night.png');
-  background-size: contain; 
-=======
+  background-image: url("../images/night.png");
+  background-size: contain;
   transform: translate(-50%, -50%);
   background-image: url("../images/night.png");
   background-size: contain;
->>>>>>> ca2d89f5fca776829ca4c70a7daf67e41d7e4cba
   background-repeat: no-repeat;
 }
 .opening {
   position: absolute;
   width: 9%;
   height: 9%;
-<<<<<<< HEAD
   top: 93.5%;
   left: 6%;
   /* transform: translate(-50%, -50%); */
-  background-image: url('../images/opening.png');
-  background-size: contain; 
-=======
-  top: 97.5%;
-  left: 8%;
-  transform: translate(-50%, -50%);
   background-image: url("../images/opening.png");
   background-size: contain;
->>>>>>> ca2d89f5fca776829ca4c70a7daf67e41d7e4cba
   background-repeat: no-repeat;
 }
 
@@ -109,26 +76,17 @@
   position: absolute;
   width: 7%;
   height: 7%;
-<<<<<<< HEAD
   top: 93.5%;
   left: 87%;
-  background-image: url('../images/ending.png');
-  background-size: contain; 
-=======
-  top: 96.5%;
-  left: 92%;
-  transform: translate(-50%, -50%);
   background-image: url("../images/ending.png");
   background-size: contain;
->>>>>>> ca2d89f5fca776829ca4c70a7daf67e41d7e4cba
   background-repeat: no-repeat;
 }
 
-.map:hover{
+.map:hover {
   transform: scale(1.5);
 }
 
-.map{
+.map {
   transition: 1s ease-in-out;
 }
-
