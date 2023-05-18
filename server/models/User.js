@@ -21,6 +21,7 @@ const userSchema = mongoose.Schema({
     type: String,
     maxlength: 50,
   },
+  // 0(유저), 1(게스트), 2(관리자)
   role: {
     type: Number,
     default: 0,
