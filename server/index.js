@@ -102,6 +102,17 @@ app.get("/api/users/logout", auth, (req, res) => {
   });
 });
 
+app.get("/api/users/:email", (req, res) => {
+  User.findOne({ email: req.user._id }, (err, user) => {
+    if (err) console.log(err);
+    else {
+      res.status(200).send({
+        user: user,
+      });
+    }
+  });
+});
+
 const port = 5000;
 
 // 포트에서 앱 실행하게 함

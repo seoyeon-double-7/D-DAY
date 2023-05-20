@@ -7,12 +7,12 @@ function HomePage() {
   return (
     <div className="home">
       <Nav />
-
-      <div className="map map-morning"></div>
-      <div className="map map-afternonn"></div>
-      <div className="map map-dinner"></div>
-      <div className="map map-night"></div>
-
+      <div className="home-map">
+        <div className="map map-morning"></div>
+        <div className="map map-afternonn"></div>
+        <div className="map map-dinner"></div>
+        <div className="map map-night"></div>
+      </div>
 
       <Footer />
     </div>

@@ -1,5 +1,5 @@
 import axios from "axios";
-import { LOGIN_USER, REGISTER_USER, AUTH_USER } from "./types";
+import { LOGIN_USER, REGISTER_USER, AUTH_USER, GET_USER } from "./types";
 
 // login action
 
@@ -39,6 +39,15 @@ export function auth() {
   return {
     // redux로 옮겨주기
     type: AUTH_USER,
+    payload: request,
+  };
+}
+
+export function getUser(email) {
+  const request = axios.get(`/api/users/${email}`).then((res) => res);
+
+  return {
+    type: GET_USER,
     payload: request,
   };
 }
