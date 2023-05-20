@@ -7,13 +7,10 @@ function HomePage() {
   return (
     <div className="home">
       <Nav />
-
-      <img className="map map-morning" src={`/image/morning.png`}/>
-      <img className="map map-afternonn" src={`/image/afternonn.png`}/>
-      <img className="map map-dinner" src={`/image/diner.png`}/>
-      <img className="map map-night" src={`/image/night.png`}/>
-
-
+      <img className="map map-morning" src={`/images/morning.png`}/>
+      <img className="map map-afternonn" src={`/images/afternoon.png`}/>
+      <img className="map map-dinner" src={`/images/diner.png`}/>
+      <img className="map map-night" src={`/images/night.png`}/>
       <Footer />
     </div>
   );
