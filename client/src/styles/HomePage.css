@@ -2,16 +2,8 @@
   position: relative;
   width: 100vw;
   height: 100vh;
-<<<<<<< HEAD
-  background-image: url('../images/homebackground.png');
-  background-size: cover; 
-=======
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-image: url("../../public/images/homebackground.png");
+  background-image: url('../../public/images/homebackground.png');
   background-size: cover;
->>>>>>> bbbcea17cb4f74cd5f4af6da428f9d8a79552305
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -22,14 +14,6 @@
   height: 17%;
   top: 39%;
   left: 11%;
-<<<<<<< HEAD
-
-  background-image: url("../images/morning.png");
-=======
-  background-image: url("../../public/images/morning.png");
->>>>>>> bbbcea17cb4f74cd5f4af6da428f9d8a79552305
-  background-size: contain;
-  background-repeat: no-repeat;
 }
 
 .map-afternonn{
@@ -38,12 +22,6 @@
   height: 20.5%;
   top: 69%;
   left: 24%;
-<<<<<<< HEAD
-
-  background-image: url("../images/afternonn.png");
-=======
-  background-image: url("../../public/images/afternonn.png");
->>>>>>> bbbcea17cb4f74cd5f4af6da428f9d8a79552305
   background-size: contain;
   background-repeat: no-repeat;
 }
@@ -54,10 +32,6 @@
   height: 14%;
   top: 69%;
   left: 72.5%;
-  /* transform: translate(-50%, -50%); */
-  background-image: url("../../public/images/diner.png");
-  background-size: contain;
-  background-repeat: no-repeat;
 }
 
 .map-night{
@@ -66,17 +40,6 @@
   height: 12%;
   top: 38.5%;
   left: 76.5%;
-  /* transform: translate(-50%, -50%); */
-<<<<<<< HEAD
-
-  background-image: url("../images/night.png");
-=======
-  background-image: url("../../public/images/night.png");
->>>>>>> bbbcea17cb4f74cd5f4af6da428f9d8a79552305
-  background-size: contain;
-  transform: translate(-50%, -50%);
-  background-size: contain;
-  background-repeat: no-repeat;
 }
 .opening{
   position: absolute;
@@ -84,10 +47,6 @@
   height: 9%;
   top: 93.5%;
   left: 6%;
-  /* transform: translate(-50%, -50%); */
-  background-image: url("../../public/images/opening.png");
-  background-size: contain;
-  background-repeat: no-repeat;
 }
 
 .ending{
@@ -96,9 +55,6 @@
   height: 7%;
   top: 93.5%;
   left: 87%;
-  background-image: url("../../public/images/ending.png");
-  background-size: contain;
-  background-repeat: no-repeat;
 }
 
 .map:hover {
