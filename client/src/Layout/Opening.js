@@ -18,18 +18,24 @@ const Opening = () => {
   const changeScreen = () => {
     if(index < arr.length-1)
       setIndex(i => i + 1);
-    if(index == arr.length-1) navigate("/");
+    if(index == arr.length-1) goHome();
   };
+
+  function goHome() {
+    navigate("/");
+  }
 
   return (
     <div>
-    <img className='next' src={`/images/next.png`} onClick={changeScreen} />
-        <img className='bg' src={`/images/${arr[index]}`} />
+      <img className='next' src={`/images/next.png`} onClick={changeScreen} />
+      <img className='bg' src={`/images/${arr[index]}`} />
 
-        <div>
-            <img className='namebox' src={`/images/namebox.png`}/>
-        </div>
-        <img className='textbox' src={`/images/textbox.png`}/>
+      <img className='skip' src={`/images/skip.png`} onClick={goHome}/>
+      <div>
+        <img className='namebox' src={`/images/namebox.png`}/>
+        <img className='name' src={`/images/name.png`}/>
+      </div>
+      <img className='textbox' src={`/images/textbox.png`}/>
     </div>
   )
 }

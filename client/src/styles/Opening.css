@@ -28,3 +28,19 @@
     left: 20%;
     z-index: 2; 
 }
+
+.name{
+    position: absolute;
+    height: 4%;
+    top: 66%;
+    left: 25%;
+    z-index: 3; 
+}
+
+.skip{
+    position: absolute;
+    height: 2%;
+    top: 10%;
+    left: 85%;
+    z-index: 2; 
+}
