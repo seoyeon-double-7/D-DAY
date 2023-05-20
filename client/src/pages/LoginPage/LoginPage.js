@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { loginUser } from "../../_actions/user_action";
 import { useNavigate } from "react-router-dom";
 
-import { guest_account } from "./Settings/guest_account";
+// import { guest_account } from "./Settings/guest_account";
 
 function LoginPage() {
   const dispatch = useDispatch();
@@ -44,14 +44,8 @@ function LoginPage() {
 
   const onGuestHandler = (event) => {
     event.preventDefault();
-    dispatch(loginUser(guest_account)).then((response) => {
-      if (response.payload.loginSuccess) {
-        // props.history.push("/");
-        navigate("/");
-      } else {
-        alert(response.payload.message);
-      }
-    });
+    // isAuth가 false인 상태로 바로 홈화면으로 이동
+    navigate("/");
   };
   return (
     <div

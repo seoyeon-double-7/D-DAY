@@ -37,7 +37,7 @@ function Nav() {
   const navigateToLogin = () => {
     navigate("/login");
   };
-
+  console.log(isExistUser(user) && user.isAuth);
   return (
     <nav>
       <div className="logo" onClick={navigateToHome}></div>
@@ -46,13 +46,12 @@ function Nav() {
         <div className="footprint" onClick={navigateToFootPrint}></div>
 
         {/* 게스트이면 className = "sign-in", 로그인 되어있으면 sign-out */}
-        <div className="sign-out" onClick={onClickHandler}></div>
-
-        {isExistUser(user) && user.isAuth ? (
-          <div className="sign-out" onClick={onClickHandler}></div>
-        ) : (
-          <div className="sign-in" onClick={navigateToLogin} />
-        )}
+        <div
+          className={isExistUser(user) && user.isAuth ? "sign-out" : "sign-in"}
+          onClick={
+            isExistUser(user) && user.isAuth ? onClickHandler : navigateToLogin
+          }
+        />
 
         {/* 랭킹 넣어주기 */}
         <div className="rank" onClick={navigateToRank}></div>

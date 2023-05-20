@@ -51,6 +51,10 @@ function RegisterPage() {
     });
   };
 
+  const navigateToLogin = () => {
+    navigate("/login");
+  };
+
   return (
     <div
       style={{
@@ -86,6 +90,7 @@ function RegisterPage() {
 
         <br />
         <button>Register</button>
+        <button onClick={navigateToLogin}>로그인하러 가기</button>
       </form>
     </div>
   );
