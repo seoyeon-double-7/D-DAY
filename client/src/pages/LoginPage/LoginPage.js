@@ -1,29 +1,71 @@
-// import { useState } from "react";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { loginUser } from "../../_actions/user_action";
+import { useNavigate } from "react-router-dom";
 
 function LoginPage() {
-  // const [name, setName] = useState("");
-  // const [Pwd, setPwd] = useState("");
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
-  // const onNameHandler = (event)=>{
-  //     setName(event.currentTarget.value);
-  // }
+  const [Email, setEmail] = useState("");
+  const [Password, setPassword] = useState("");
 
-  // const onPwdHandler = (event)=>{
-  //     setPwd(event.currentTarget.value);
-  // }
+  const onEmailHandler = (event) => {
+    setEmail(event.currentTarget.value);
+  };
+
+  const onPasswordHandler = (event) => {
+    setPassword(event.currentTarget.value);
+  };
+
+  const navigateToRegister = () => {
+    navigate("/register");
+  };
+
+  const onSubmitHandler = (event) => {
+    event.preventDefault();
+
+    let body = {
+      email: Email,
+      password: Password,
+    };
+
+    dispatch(loginUser(body)).then((response) => {
+      if (response.payload.loginSuccess) {
+        // props.history.push("/");
+        navigate("/");
+      } else {
+        alert(response.payload.message);
+      }
+    });
+  };
 
   return (
-    <div>
-      로그인 페이지
-      {/* <form onSubmit={onSubmitHandler}>
-            <label>Email</label>
-            <input type="email" value={Email} onChange={onEmailHandler} />
-            <label>Password</label>
-            <input type="password" value={Password} onChange={onPasswordHandler} />
-    
-            <br />
-            <button>Login</button>
-          </form> */}
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        width: "100%",
+        height: "100vh",
+      }}
+    >
+      <form
+        style={{
+          display: "flex",
+          flexDirection: "column",
+        }}
+        onSubmit={onSubmitHandler}
+      >
+        <label>Email</label>
+        <input type="email" value={Email} onChange={onEmailHandler} />
+        <label>Password</label>
+        <input type="password" value={Password} onChange={onPasswordHandler} />
+
+        <br />
+        <button>Login</button>
+        <button onClick={navigateToRegister}>Register</button>
+      </form>
     </div>
   );
 }
