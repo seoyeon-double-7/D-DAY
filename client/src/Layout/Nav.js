@@ -37,6 +37,11 @@ function Nav() {
   const navigateToLogin = () => {
     navigate("/login");
   };
+
+  const navigateToMyPage = () => {
+    navigate("/mypage");
+  };
+
   console.log(isExistUser(user) && user.isAuth);
   return (
     <nav>
@@ -55,6 +60,13 @@ function Nav() {
 
         {/* 랭킹 넣어주기 */}
         <div className="rank" onClick={navigateToRank}></div>
+        {/*
+         * 로그인 되있으면 마이페이지
+         * TODO : db에서 사용자 이미지 가져와서 보여주기
+         */}
+        {isExistUser(user) && user.isAuth ? (
+          <div className="my-page" onClick={navigateToMyPage} />
+        ) : null}
       </div>
     </nav>
   );

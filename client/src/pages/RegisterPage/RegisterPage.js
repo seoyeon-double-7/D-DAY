@@ -39,6 +39,7 @@ function RegisterPage() {
       email: Email,
       password: Password,
       name: Name,
+      playNum: 0,
     };
 
     dispatch(registerUser(body)).then((response) => {

@@ -1,6 +1,5 @@
 import Nav from "../../Layout/Nav";
 import Footer from "../../Layout/Footer";
-import "../../styles/HomePage.css";
 import "../../styles/MyPage.css";
 import { useSelector } from "react-redux";
 // import profileImg from "../../../public/images/profile_img_sample.png";
