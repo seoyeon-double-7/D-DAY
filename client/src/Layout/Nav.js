@@ -17,12 +17,19 @@ function Nav() {
     });
   };
 
+  // 홈 화면 이동
+  const navigateToHome = () => {
+    navigate("/");
+  };
+
+  // 발자취 화면 이동
   const navigateToFootPrint = () => {
     navigate("/footprint");
   };
 
-  const navigateToHome = () => {
-    navigate("/");
+  // 랭킹 화면 이동
+  const navigateToRank = () => {
+    navigate("/ranking");
   };
 
   return (
@@ -32,10 +39,11 @@ function Nav() {
       <div>
         <div className="footprint" onClick={navigateToFootPrint}></div>
 
-        <div className="sign-in" onClick={onClickHandler}></div>
+        {/* 게스트이면 className = "sign-in", 로그인 되어있으면 sign-out */}
+        <div className="sign-out" onClick={onClickHandler}></div>
 
         {/* 랭킹 넣어주기 */}
-        {/* <div className="sign-up"></div> */}
+        <div className="rank" onClick={navigateToRank}></div>
       </div>
     </nav>
   );
