@@ -1,0 +1,49 @@
+.footprint-background {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url("../../public/images/footprint_background.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.footprint-submit {
+  position: fixed;
+  top: 765px;
+  left: 1460px;
+  width: 100px;
+  height: 100px;
+  background-image: url("../../public/images/footprint_button.png");
+  border: none;
+  cursor: pointer;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  transition: 0.5s;
+}
+
+.footprint-submit:hover {
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  transform: translateY(-10px);
+}
+
+textarea {
+  width: 1000px;
+  height: 130px;
+  padding: 10px;
+  box-sizing: border-box;
+  border: solid 3px #7d5e41;
+  border-radius: 10px;
+  font-size: 16px;
+  resize: none;
+  position: fixed;
+  text-align: center;
+  top: 750px;
+  left: 400px;
+  opacity: 80%;
+}

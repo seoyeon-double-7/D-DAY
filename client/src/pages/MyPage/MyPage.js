@@ -9,7 +9,6 @@ function MyPage() {
   // 참고 : https://phsun102.tistory.com/85
 
   const user = useSelector((state) => state.user.userData);
-  console.log("useSelectore로 data 가져오기 ", user);
   return (
     <div className="mypage-background">
       <Nav />

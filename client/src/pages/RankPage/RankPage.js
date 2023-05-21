@@ -7,8 +7,6 @@ function RankPage() {
       <Nav />
 
       <div className="rank-main">랭킹</div>
-
-      <Footer />
     </div>
   );
 }

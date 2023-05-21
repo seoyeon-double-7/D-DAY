@@ -16,9 +16,9 @@ export default function f(SpecificComponent, option, adminRoute = null) {
 
     useEffect(() => {
       dispatch(auth()).then((response) => {
-        if (response.payload.name)
-          console.log(`${response.payload.name}님 안녕하세요`);
-        console.log(response);
+        // if (response.payload.name)
+        //   console.log(`${response.payload.name}님 안녕하세요`);
+        //console.log(response);
 
         // 로그인 하지 아닐 때 로그인 페이지로 보내주기
         if (!response.payload.isAuth) {

@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 
 const { User } = require("./models/User");
+const { POST } = require("./models/FootPrint");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
@@ -110,6 +111,24 @@ app.get("/api/users/:email", (req, res) => {
         user: user,
       });
     }
+  });
+});
+
+app.post("/api/users/footprint/write", (req, res) => {
+  const footprint = new POST(req.body);
+  footprint.user = req.user;
+  footprint.save((err, doc) => {
+    if (err) return res.status(500).json({ success: false, err });
+    return res.status(200).send({
+      postSuccess: true,
+    });
+  });
+});
+
+app.post("api/users/footprint/read", (req, res) => {
+  const Data = POST.find();
+  return res.status(200).send({
+    postData: Data,
   });
 });
 

@@ -7,16 +7,25 @@
   background-image: url("../../public/images/nav_opening.png");
   background-size: contain;
   background-repeat: no-repeat;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.go-opening:hover {
+  transform: translateY(-3px);
 }
 
 .go-ending {
   position: absolute;
   width: 7%;
   height: 7%;
-  top: 97%;
-  left: 92%;
-  transform: translate(-50%, -50%);
+  top: 94%;
+  left: 90%;
   background-image: url("../../public/images/ending.png");
   background-size: contain;
   background-repeat: no-repeat;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.go-ending:hover {
+  transform: translateY(-4px);
 }

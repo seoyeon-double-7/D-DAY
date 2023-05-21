@@ -2,13 +2,26 @@
   position: absolute;
   width: 14%;
   height: 14%;
-  top: 11%;
-  left: 9%;
-  transform: translate(-50%, -50%);
+  top: 3%;
+  left: 3%;
+  /* transform: translate(-50%, -50%); */
   background-image: url("../../public/images/logo.png");
   background-size: contain;
   background-repeat: no-repeat;
+  transition: 0.5s;
+  cursor: pointer;
 }
+.logo:hover {
+  transform: translateY(-7px);
+}
+
+/* transition: 0.5s;
+}
+
+.footprint-submit:hover {
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
+} */
 
 .footprint {
   position: absolute;
@@ -20,6 +33,7 @@
   background-image: url("../../public/images/footprint.png");
   background-size: contain;
   background-repeat: no-repeat;
+  cursor: pointer;
 }
 
 /* 로그인 */
@@ -33,6 +47,7 @@
   background-image: url("../../public/images/login.png");
   background-size: contain;
   background-repeat: no-repeat;
+  cursor: pointer;
 }
 
 /* 로그아웃 */
@@ -46,6 +61,7 @@
   background-image: url("../../public/images/nav_logout.png");
   background-size: contain;
   background-repeat: no-repeat;
+  cursor: pointer;
 }
 
 /* rank */
@@ -59,6 +75,7 @@
   background-image: url("../../public/images/nav_rank.png");
   background-size: contain;
   background-repeat: no-repeat;
+  cursor: pointer;
 }
 
 /* .sign-up{
@@ -83,4 +100,5 @@
   background-image: url("../../public/images/profile_img_sample2.png");
   background-size: contain;
   background-repeat: no-repeat;
+  cursor: pointer;
 }
