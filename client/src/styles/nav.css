@@ -1,35 +1,104 @@
-/* nav {
-    /* background-color: rgb(226, 217, 204);  
-    display: flex;
-    margin-top: 20px;
-    margin-bottom: 20px;
-  }
-  
-  nav > div {
-    width: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  } */
-
-
-nav {
-    background-color: rgb(237, 220, 201);
-    width: 100%;
-    display: flex;
-    padding: 10px;
-
-    text-align: center;
-    align-items: center;
-    font-size: 18px;
-  margin: auto;
-  overflow: hidden;
-  /* padding-top: 30px; */
-  padding-bottom: 15px;
+.logo {
+  position: absolute;
+  width: 14%;
+  height: 14%;
+  top: 3%;
+  left: 3%;
+  /* transform: translate(-50%, -50%); */
+  background-image: url("../../public/images/logo.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.logo:hover {
+  transform: translateY(-7px);
 }
 
-.item {
-    margin-left: 20px;
-    text-decoration: none;
-    color: black;
+/* transition: 0.5s;
+}
+
+.footprint-submit:hover {
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
+} */
+
+.footprint {
+  position: absolute;
+  width: 8%;
+  height: 8%;
+  top: 7%;
+  left: 75%;
+  transform: translate(-50%, -50%);
+  background-image: url("../../public/images/footprint.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+/* 로그인 */
+.sign-in {
+  position: absolute;
+  width: 5.5%;
+  height: 5.5%;
+  top: 8.7%;
+  left: 80%;
+  transform: translate(-50%, -50%);
+  background-image: url("../../public/images/login.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+/* 로그아웃 */
+.sign-out {
+  position: absolute;
+  width: 5.5%;
+  height: 5.5%;
+  top: 8.6%;
+  left: 80%;
+  transform: translate(-50%, -50%);
+  background-image: url("../../public/images/nav_logout.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+/* rank */
+.rank {
+  position: absolute;
+  width: 6%;
+  height: 6%;
+  top: 8.7%;
+  left: 88%;
+  transform: translate(-50%, -50%);
+  background-image: url("../../public/images/nav_rank.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+/* .sign-up{
+  position: absolute;
+  width: 6%;
+  height: 6%;
+  top: 8.7%;
+  left: 93%;
+  transform: translate(-50%, -50%);
+  background-image: url('../images/signup.png');
+  background-size: contain; 
+  background-repeat: no-repeat;
+} */
+
+.my-page {
+  position: absolute;
+  width: 6%;
+  height: 6%;
+  top: 7.5%;
+  left: 95.5%;
+  transform: translate(-50%, -50%);
+  background-image: url("../../public/images/profile_img_sample2.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
 }

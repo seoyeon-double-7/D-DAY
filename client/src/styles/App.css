@@ -1,9 +1,9 @@
-* {
-  box-sizing: border-box;
-  /* background-color: rgb(209, 187, 139); */
+html{
+  margin: 0;
+  height: 0;
 }
 
-.app {
-  width: 100%;
-  height: 100%;
+.home{
+  margin: 0;
+  height: 0;
 }

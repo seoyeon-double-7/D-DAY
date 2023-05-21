@@ -1,0 +1,46 @@
+.bg{
+    position: relative;
+    /* 이미지 비율대로 커지거나 작아지게 하는 속성 */
+    width: 100%;
+    height: auto;
+}
+
+.textbox{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0%;
+    z-index: 1; 
+}
+
+.next{
+    position: absolute;
+    height: 4.5%;
+    top: 90%;
+    left: 75%;
+    z-index: 2; 
+}
+
+.namebox{
+    position: absolute;
+    height: 6%;
+    top: 65%;
+    left: 20%;
+    z-index: 2; 
+}
+
+.name{
+    position: absolute;
+    height: 4%;
+    top: 66%;
+    left: 25%;
+    z-index: 3; 
+}
+
+.skip{
+    position: absolute;
+    height: 2%;
+    top: 10%;
+    left: 85%;
+    z-index: 2; 
+}

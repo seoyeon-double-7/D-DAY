@@ -1,14 +1,53 @@
-button {
-  width: 200px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .home {
-  height: 700px;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url("../../public/images/homebackground.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 1;
 }
 
-.home-item {
-  margin: 100px;
+.map-morning {
+  position: absolute;
+  width: 15%;
+  top: 39%;
+  left: 17%;
+  z-index: 3;
+}
+
+.map-afternonn {
+  position: absolute;
+  width: 19%;
+  top: 69%;
+  left: 28%;
+  z-index: 3;
+}
+
+.map-dinner {
+  position: absolute;
+  width: 13%;
+  top: 62%;
+  left: 63%;
+  z-index: 3;
+}
+
+.map-night {
+  position: absolute;
+  width: 11%;
+  top: 32%;
+  left: 67%;
+  z-index: 3;
+}
+
+.map:hover {
+  transform: scale(1.1);
+}
+
+.map {
+  transition: 0.4s ease-in-out;
 }
