@@ -1,46 +1,94 @@
-.bg{
-    position: relative;
-    /* 이미지 비율대로 커지거나 작아지게 하는 속성 */
-    width: 100%;
-    height: auto;
+.bg {
+  position: relative;
+  /* 이미지 비율대로 커지거나 작아지게 하는 속성 */
+  width: 100%;
+  height: auto;
 }
 
-.textbox{
-    position: absolute;
-    width: 100%;
-    left: 0;
-    bottom: 0%;
-    z-index: 1; 
+.textbox {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0%;
+  z-index: 1;
 }
 
-.next{
-    position: absolute;
-    height: 4.5%;
-    top: 90%;
-    left: 75%;
-    z-index: 2; 
+.next {
+  position: absolute;
+  height: 4.5%;
+  top: 85%;
+  left: 75%;
+  z-index: 2;
+  cursor: pointer;
+  animation: ani 1s infinite alternate;
+}
+.next:hover {
+  animation: none;
 }
 
-.namebox{
-    position: absolute;
-    height: 6%;
-    top: 65%;
-    left: 20%;
-    z-index: 2; 
+@keyframes ani {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(0, 10px);
+  }
 }
 
-.name{
-    position: absolute;
-    height: 4%;
-    top: 66%;
-    left: 25%;
-    z-index: 3; 
+.namebox {
+  position: absolute;
+  height: 6%;
+  top: 65%;
+  left: 20%;
+  z-index: 2;
 }
 
-.skip{
-    position: absolute;
-    height: 2%;
-    top: 10%;
-    left: 85%;
-    z-index: 2; 
+.name {
+  position: absolute;
+  height: 4%;
+  top: 66%;
+  left: 25%;
+  z-index: 3;
+}
+
+.skip {
+  position: absolute;
+  height: 2%;
+  top: 10%;
+  left: 85%;
+  z-index: 2;
+  cursor: pointer;
+  -webkit-animation: blink 0.5s ease-in-out infinite alternate;
+  -moz-animation: blink 0.5s ease-in-out infinite alternate;
+  animation: blink 0.5s ease-in-out infinite alternate;
+}
+.skip:hover {
+  animation: none;
+}
+
+@-webkit-keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

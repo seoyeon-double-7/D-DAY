@@ -9,6 +9,9 @@ const footprintSchema = mongoose.Schema({
   name: {
     type: String,
   },
+  email: {
+    type: String,
+  },
   contents: {
     type: String,
     required: true,

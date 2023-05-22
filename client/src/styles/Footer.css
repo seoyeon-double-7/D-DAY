@@ -2,30 +2,61 @@
   position: absolute;
   width: 9%;
   height: 9%;
-  top: 94%;
+  top: 91%;
   left: 5%;
   background-image: url("../../public/images/nav_opening.png");
   background-size: contain;
   background-repeat: no-repeat;
-  transition: 0.5s;
   cursor: pointer;
+  -webkit-animation: blink 0.9s ease-in-out infinite alternate;
+  -moz-animation: blink 0.9s ease-in-out infinite alternate;
+  animation: blink 0.9s ease-in-out infinite alternate;
 }
 .go-opening:hover {
-  transform: translateY(-3px);
+  animation: none;
+}
+
+@-webkit-keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .go-ending {
   position: absolute;
   width: 7%;
   height: 7%;
-  top: 94%;
+  top: 91%;
   left: 90%;
   background-image: url("../../public/images/ending.png");
   background-size: contain;
   background-repeat: no-repeat;
-  transition: 0.5s;
   cursor: pointer;
+  -webkit-animation: blink 0.9s ease-in-out infinite alternate;
+  -moz-animation: blink 0.9s ease-in-out infinite alternate;
+  animation: blink 0.9s ease-in-out infinite alternate;
 }
 .go-ending:hover {
-  transform: translateY(-4px);
+  animation: none;
 }

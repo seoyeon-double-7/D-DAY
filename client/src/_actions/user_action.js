@@ -32,7 +32,6 @@ export function registerUser(dataToSubmit) {
 }
 export function auth() {
   const request = axios
-    // 백엔드 서버 url에 dataToSubmit 데이터 보내주기
     .get("/api/users/auth")
     .then((response) => response.data);
 

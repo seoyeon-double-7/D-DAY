@@ -12,9 +12,9 @@ export function newPost(dataToSubmit) {
   };
 }
 
-export function getPost(data) {
+export function getPost() {
   const request = axios
-    .post("api/users/footprint/read", data)
+    .post("api/users/footprint/read")
     .then((res) => res.data);
 
   return {

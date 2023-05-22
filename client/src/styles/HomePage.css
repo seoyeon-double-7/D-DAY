@@ -18,6 +18,7 @@
   top: 39%;
   left: 17%;
   z-index: 3;
+  cursor: pointer;
 }
 
 .map-afternonn {
@@ -26,6 +27,7 @@
   top: 69%;
   left: 28%;
   z-index: 3;
+  cursor: pointer;
 }
 
 .map-dinner {
@@ -34,6 +36,7 @@
   top: 62%;
   left: 63%;
   z-index: 3;
+  cursor: pointer;
 }
 
 .map-night {
@@ -42,6 +45,7 @@
   top: 32%;
   left: 67%;
   z-index: 3;
+  cursor: pointer;
 }
 
 .map:hover {

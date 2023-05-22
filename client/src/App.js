@@ -7,6 +7,7 @@ import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import FootPrintPage from "./pages/FootPrintPage/FootPrintPage";
 import RankPage from "./pages/RankPage/RankPage";
 import MyPage from "./pages/MyPage/MyPage";
+import GamePage from "./pages/GamePage/GamePage";
 // import Footer from "./Layout/Footer";
 import Opening from "./Layout/Opening";
 import Auth from "./hoc/auth";
@@ -19,6 +20,7 @@ function App() {
   const NewFootPrintPage = Auth(FootPrintPage, true);
   const NewRankPage = Auth(RankPage, true);
   const NewMyPage = Auth(MyPage, true);
+  const NewGamePage = Auth(GamePage, true);
 
   return (
     <div className="App">
@@ -33,6 +35,7 @@ function App() {
           <Route exact path="/opening" element={<Opening />} />
           <Route exact path="/ranking" element={<NewRankPage />} />
           <Route exact path="/mypage" element={<NewMyPage />} />
+          <Route exact path="/d-day" element={<NewGamePage />} />
         </Routes>
       </Router>
     </div>

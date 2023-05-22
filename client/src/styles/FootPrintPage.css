@@ -47,3 +47,38 @@ textarea {
   left: 400px;
   opacity: 80%;
 }
+.footprint-post-box {
+  margin-top: 140px;
+  margin-right: 10px;
+  margin-left: 10px;
+  border-radius: 10px;
+  box-shadow: 3px 3px 3px rgb(68, 68, 68);
+  width: 300px;
+  height: 130px;
+  padding: 30px;
+  background-color: white;
+  opacity: 90%;
+  float: left;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.footprint-post-box:hover {
+  transform: translateY(-5px);
+}
+
+.footprint-post-name {
+  font-weight: bold;
+  font-size: 20px;
+  color: #573b21;
+}
+.footprint-post-date {
+  color: rgb(104, 104, 104);
+}
+
+.update-footprint-btn {
+  position: relative;
+  color: rgb(116, 45, 17);
+  top: 100px;
+  left: 10px;
+}

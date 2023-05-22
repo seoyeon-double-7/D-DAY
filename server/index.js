@@ -117,6 +117,7 @@ app.get("/api/users/:email", (req, res) => {
 app.post("/api/users/footprint/write", (req, res) => {
   const footprint = new POST(req.body);
   footprint.user = req.user;
+
   footprint.save((err, doc) => {
     if (err) return res.status(500).json({ success: false, err });
     return res.status(200).send({
@@ -125,11 +126,26 @@ app.post("/api/users/footprint/write", (req, res) => {
   });
 });
 
-app.post("api/users/footprint/read", (req, res) => {
-  const Data = POST.find();
-  return res.status(200).send({
-    postData: Data,
+app.post("/api/users/footprint/read", (req, res) => {
+  // const footprint = new POST(req.body);
+
+  POST.find(function (err, data) {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log(data);
+      return res.json({
+        postData: data,
+      });
+    }
   });
+
+  // footprint.save((err, doc) => {
+  //   if (err) return res.status(500).json({ success: false, err });
+  //   return res.status(200).send({
+  //     postSuccess: true,
+  //   });
+  // });
 });
 
 const port = 5000;

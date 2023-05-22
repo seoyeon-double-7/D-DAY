@@ -1,6 +1,6 @@
-import React, { useState , useEffect } from 'react'
+import React, { useState, useEffect } from "react";
 import "../styles/Opening.css";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 const Opening = () => {
   const navigate = useNavigate();
@@ -12,13 +12,12 @@ const Opening = () => {
     "hospital.png",
     "hospital.png",
     "road.png",
-    "village.png"
+    "village.png",
   ];
 
   const changeScreen = () => {
-    if(index < arr.length-1)
-      setIndex(i => i + 1);
-    if(index == arr.length-1) goHome();
+    if (index < arr.length - 1) setIndex((i) => i + 1);
+    if (index == arr.length - 1) goHome();
   };
 
   function goHome() {
@@ -27,17 +26,22 @@ const Opening = () => {
 
   return (
     <div>
-      <img className='next' src={`/images/next.png`} onClick={changeScreen} />
-      <img className='bg' src={`/images/${arr[index]}`} />
+      <img
+        className="next"
+        src={`/images/next.png`}
+        onClick={changeScreen}
+        alt=""
+      />
+      <img className="bg" src={`/images/${arr[index]}`} alt="" />
 
-      <img className='skip' src={`/images/skip.png`} onClick={goHome}/>
+      <img className="skip" src={`/images/skip.png`} onClick={goHome} alt="" />
       <div>
-        <img className='namebox' src={`/images/namebox.png`}/>
-        <img className='name' src={`/images/name.png`}/>
+        <img className="namebox" src={`/images/namebox.png`} alt="" />
+        <img className="name" src={`/images/name.png`} alt="" />
       </div>
-      <img className='textbox' src={`/images/textbox.png`}/>
+      <img className="textbox" src={`/images/textbox.png`} alt="" />
     </div>
-  )
-}
+  );
+};
 
-export default Opening
+export default Opening;

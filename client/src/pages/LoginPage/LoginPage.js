@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { loginUser } from "../../_actions/user_action";
 import { useNavigate } from "react-router-dom";
-
+import Logo from "./Settings/showLogo";
 // import { guest_account } from "./Settings/guest_account";
 
 function LoginPage() {
@@ -48,32 +48,39 @@ function LoginPage() {
     navigate("/");
   };
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        width: "100%",
-        height: "100vh",
-      }}
-    >
-      <form
+    <div>
+      <Logo />
+      <div
         style={{
           display: "flex",
-          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+          width: "100%",
+          height: "100vh",
         }}
-        onSubmit={onSubmitHandler}
       >
-        <label>Email</label>
-        <input type="email" value={Email} onChange={onEmailHandler} />
-        <label>Password</label>
-        <input type="password" value={Password} onChange={onPasswordHandler} />
+        <form
+          style={{
+            display: "flex",
+            flexDirection: "column",
+          }}
+          onSubmit={onSubmitHandler}
+        >
+          <label>Email</label>
+          <input type="email" value={Email} onChange={onEmailHandler} />
+          <label>Password</label>
+          <input
+            type="password"
+            value={Password}
+            onChange={onPasswordHandler}
+          />
 
-        <br />
-        <button>Login</button>
-        <button onClick={onGuestHandler}>게스트 플레이</button>
-        <button onClick={navigateToRegister}>Register</button>
-      </form>
+          <br />
+          <button>Login</button>
+          <button onClick={onGuestHandler}>게스트 플레이</button>
+          <button onClick={navigateToRegister}>Register</button>
+        </form>
+      </div>
     </div>
   );
 }

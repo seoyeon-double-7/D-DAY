@@ -15,29 +15,27 @@ function FootPrintPage() {
   // const navigate = useNavigate();
 
   const [Contents, setContents] = useState("");
-  const [Posts, setPosts] = useState();
-
-  const getFootprintPost = () => {
-    dispatch(getPost("a")).then((res) => {
-      console.log("post 내용!!! ", res.payload.postData);
-      setPosts(res.payload.postData);
-    });
-  };
+  const [Posts, setPosts] = useState({});
 
   const onContentsHandler = (event) => {
     setContents(event.currentTarget.value);
   };
-  // useEffect(() => {
-  //   getFootprintPost();
-  // });
+
+  useEffect(() => {
+    dispatch(getPost()).then((res) => {
+      console.log("post 내용!!! ", res.payload.postData);
+      setPosts(res.payload.postData);
+      console.log("과연 바뀌었을까? : ", Posts);
+    });
+  }, [Contents]);
 
   const onsubmitHandler = (event) => {
     event.preventDefault();
-    getFootprintPost();
     var postData = moment.tz("Asia/Seoul").format("YYYY-MM-DD HH:mm:ss");
 
     let body = {
       name: user.name,
+      email: user.email,
       contents: Contents,
       date: postData,
     };
@@ -57,7 +55,23 @@ function FootPrintPage() {
     <div className="footprint-background">
       <Nav />
       {/* 포스트 보여주는 부분 */}
-      {/* <div className="footprint-post">{Posts.contents}</div> */}
+
+      <div className="footprint-post">
+        {Object.values(Posts).map(function (element) {
+          return (
+            <div className="footprint-post-box">
+              <span className="footprint-post-name">{element.name}</span>
+              <br />
+              <span className="footprint-post-contents">
+                {element.contents}
+              </span>
+              <br />
+              <span className="footprint-post-date">{element.date}</span>
+            </div>
+          );
+        })}
+      </div>
+
       {/* 방명록 작성 */}
       <form onSubmit={onsubmitHandler}>
         <textarea
@@ -65,7 +79,6 @@ function FootPrintPage() {
           placeholder="방명록을 남겨주세요!"
           onChange={onContentsHandler}
         />
-        {/* <input type="text" value={Contents} onChange={onContentsHandler} /> */}
         <button className="footprint-submit" />
       </form>
     </div>
