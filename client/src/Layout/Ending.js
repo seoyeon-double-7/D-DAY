@@ -14,7 +14,8 @@ const Ending = () => {
   // 엔딩 이미지
   const images = [
     { bg: "village.png", character: "ending_ch1.png" },
-    { bg: "", character: "ending_ch2.png" }
+    { bg: "gg.png", character: "ending_ch2.png" },
+    { bg: "classroom_sunset.png", character: "ending_ch3.png" }
   ];
 
   // 엔딩 왼쪽 스크립트
@@ -60,7 +61,7 @@ const Ending = () => {
     setLine((i) => i + 1);
     setText("");
     setCount(0);
-    if (line == 1)
+    if (line == 1 || line == 12)
       setIndex((i) => i + 1);
     if (line == 14) goHome();
   };
