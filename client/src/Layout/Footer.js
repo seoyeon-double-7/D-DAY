@@ -11,7 +11,12 @@ function Footer() {
   return (
     <div>
       <div className="go-opening" onClick={goOpening}></div>
-      <div className="go-ending"></div>
+      <div
+        className="go-ending"
+        onClick={() => {
+          navigate("/ending");
+        }}
+      ></div>
     </div>
   );
 }

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../styles/Opening.css";
 import { useNavigate } from "react-router-dom";
 
-const Opening = () => {
+const Ending = () => {
   const navigate = useNavigate();
 
   const [text, setText] = useState("");
@@ -11,6 +11,7 @@ const Opening = () => {
   const [line, setLine] = useState(0);
   const [state, setState] = useState("");
 
+  // 엔딩 이미지
   const images = [
     { bg: "classroom.png", character: "opening_ch1.png" },
     { bg: "hospital.png", character: "opening_ch2.png" },
@@ -18,6 +19,7 @@ const Opening = () => {
     { bg: "village.png", character: "opening_ch4.png" },
   ];
 
+  // 엔딩 왼쪽 스크립트
   const linesLeft = [
     "",
     "그야 쉬어야지!",
@@ -35,6 +37,7 @@ const Opening = () => {
     "무슨 일인진 모르겠지만 얼른 집으로 가야겠다",
   ];
 
+  // 엔딩 오른쪽 스크립트
   const linesRight = [
     "야야 오늘 자습이라는데 너 뭐할거야?",
     "",
@@ -51,13 +54,15 @@ const Opening = () => {
     "",
     "",
   ];
+
+  // 엔딩 화면 전환 이펙트
   const changeScreen = () => {
     setLine((i) => i + 1);
     setText("");
     setCount(0);
-    if (line === 3 || line === 7 || line === 11 || line === 13)
+    if (line == 3 || line == 7 || line == 11 || line == 13)
       setIndex((i) => i + 1);
-    if (line === 13) goHome();
+    if (line == 13) goHome();
   };
 
   function goHome() {
@@ -110,4 +115,4 @@ const Opening = () => {
   );
 };
 
-export default Opening;
+export default Ending;

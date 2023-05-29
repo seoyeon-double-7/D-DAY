@@ -10,6 +10,7 @@ import MyPage from "./pages/MyPage/MyPage";
 import GamePage from "./pages/GamePage/GamePage";
 // import Footer from "./Layout/Footer";
 import Opening from "./Layout/Opening";
+import Ending from "./Layout/Ending";
 import Auth from "./hoc/auth";
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
           <Route exact path="/register" element={<NewRegisterPage />} />
           <Route exact path="/footprint" element={<NewFootPrintPage />} />
           <Route exact path="/opening" element={<Opening />} />
+          <Route exact path="/ending" element={<Ending />} />
           <Route exact path="/ranking" element={<NewRankPage />} />
           <Route exact path="/mypage" element={<NewMyPage />} />
           <Route exact path="/d-day" element={<NewGamePage />} />

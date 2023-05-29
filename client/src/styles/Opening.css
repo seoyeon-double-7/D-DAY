@@ -17,11 +17,15 @@
   z-index: 3;
 }
 
+.line {
+  font-family: "digital-7";
+}
+
 .line-left {
   position: absolute;
   color: white;
   font-size: 30px;
-  text-align:left;
+  text-align: left;
   top: 78%;
   left: 21%;
   z-index: 5;
@@ -31,13 +35,13 @@
   position: absolute;
   color: white;
   font-size: 30px;
-  text-align:right;
+  text-align: right;
   top: 78%;
   right: 12%;
   z-index: 5;
 }
 
-.character{
+.character {
   position: absolute;
   height: 100%;
   left: 0;
@@ -74,7 +78,6 @@
   left: 20%;
   z-index: 5;
 }
-
 
 .name {
   position: absolute;
