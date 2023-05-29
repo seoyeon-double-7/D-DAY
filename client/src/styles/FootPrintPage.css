@@ -13,7 +13,7 @@
 }
 
 .footprint-submit {
-  position: fixed;
+  position: absolute;
   top: 765px;
   left: 1460px;
   width: 100px;
@@ -28,25 +28,25 @@
 }
 
 .footprint-submit:hover {
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
   transform: translateY(-10px);
 }
 
 textarea {
-  width: 1000px;
-  height: 130px;
-  padding: 10px;
+  width: 58%;
+  height: 14%;
+  padding: 1%;
   box-sizing: border-box;
   border: solid 3px #7d5e41;
   border-radius: 10px;
-  font-size: 16px;
+  font-size: 20px;
   resize: none;
-  position: fixed;
+  position: absolute;
   text-align: center;
-  top: 750px;
-  left: 400px;
+  top: 80%;
+  left: 13%;
   opacity: 80%;
 }
+
 .footprint-post-box {
   margin-top: 140px;
   margin-right: 10px;

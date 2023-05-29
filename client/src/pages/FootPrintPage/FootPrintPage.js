@@ -1,7 +1,7 @@
 import Nav from "../../Layout/Nav";
+import Post from "./sections/FootPrintPost";
 import "../../styles/FootPrintPage.css";
 import { useDispatch } from "react-redux";
-// import { useNavigate } from "react-router-dom";
 import { newPost } from "../../_actions/footprint_action";
 import { getPost } from "../../_actions/footprint_action";
 import { useEffect, useState } from "react";
@@ -23,9 +23,9 @@ function FootPrintPage() {
 
   useEffect(() => {
     dispatch(getPost()).then((res) => {
-      console.log("post 내용!!! ", res.payload.postData);
+      // console.log("post 내용!!! ", res.payload.postData);
       setPosts(res.payload.postData);
-      console.log("과연 바뀌었을까? : ", Posts);
+      // console.log("과연 바뀌었을까? : ", Posts);
     });
   }, [Contents]);
 
@@ -58,17 +58,7 @@ function FootPrintPage() {
 
       <div className="footprint-post">
         {Object.values(Posts).map(function (element) {
-          return (
-            <div className="footprint-post-box">
-              <span className="footprint-post-name">{element.name}</span>
-              <br />
-              <span className="footprint-post-contents">
-                {element.contents}
-              </span>
-              <br />
-              <span className="footprint-post-date">{element.date}</span>
-            </div>
-          );
+          return <Post key={element.id} postContents={element} />;
         })}
       </div>
 

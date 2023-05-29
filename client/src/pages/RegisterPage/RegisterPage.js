@@ -76,20 +76,20 @@ function RegisterPage() {
           }}
           onSubmit={onSubmitHandler}
         >
-          <label>Email</label>
+          <label>이메일</label>
           <input type="email" value={Email} onChange={onEmailHandler} />
 
-          <label>Name</label>
+          <label>이름</label>
           <input type="text" value={Name} onChange={onNameHandler} />
 
-          <label>Password</label>
+          <label>비밀번호</label>
           <input
             type="password"
             value={Password}
             onChange={onPasswordHandler}
           />
 
-          <label>Confirm Password</label>
+          <label>비밀번호 확인</label>
           <input
             type="password"
             value={ConfirmPassword}
@@ -97,8 +97,10 @@ function RegisterPage() {
           />
 
           <br />
-          <button>Register</button>
-          <button onClick={navigateToLogin}>로그인하러 가기</button>
+          <div className="button-box">
+            <button>회원가입하기</button>
+            <button onClick={navigateToLogin}>로그인하러 가기</button>
+          </div>
         </form>
       </div>
     </div>

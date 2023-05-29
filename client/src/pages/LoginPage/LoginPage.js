@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { loginUser } from "../../_actions/user_action";
 import { useNavigate } from "react-router-dom";
 import Logo from "./Settings/showLogo";
+import "../../styles/Form.css";
 // import { guest_account } from "./Settings/guest_account";
 
 function LoginPage() {
@@ -66,9 +67,9 @@ function LoginPage() {
           }}
           onSubmit={onSubmitHandler}
         >
-          <label>Email</label>
+          <label>이메일</label>
           <input type="email" value={Email} onChange={onEmailHandler} />
-          <label>Password</label>
+          <label>비밀번호</label>
           <input
             type="password"
             value={Password}
@@ -76,9 +77,11 @@ function LoginPage() {
           />
 
           <br />
-          <button>Login</button>
-          <button onClick={onGuestHandler}>게스트 플레이</button>
-          <button onClick={navigateToRegister}>Register</button>
+          <div className="button-box">
+            <button>로그인하기</button>
+            <button onClick={onGuestHandler}>게스트 플레이</button>
+            <button onClick={navigateToRegister}>회원가입하기</button>
+          </div>
         </form>
       </div>
     </div>
