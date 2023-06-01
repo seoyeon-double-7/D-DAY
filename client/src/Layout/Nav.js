@@ -42,7 +42,7 @@ function Nav() {
     navigate("/mypage");
   };
 
-  console.log(isExistUser(user) && user.isAuth);
+  // console.log(isExistUser(user) && user.isAuth);
   return (
     <nav>
       <div className="logo" onClick={navigateToHome}></div>

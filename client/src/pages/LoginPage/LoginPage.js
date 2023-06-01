@@ -49,7 +49,7 @@ function LoginPage() {
     navigate("/");
   };
   return (
-    <div>
+    <div className="form-main">
       <Logo />
       <div
         style={{

@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { registerUser } from "../../_actions/user_action";
 import { useNavigate } from "react-router-dom";
 import Logo from "../LoginPage/Settings/showLogo";
+import "../../styles/Form.css";
 
 function RegisterPage() {
   const dispatch = useDispatch();
@@ -58,7 +59,7 @@ function RegisterPage() {
   };
 
   return (
-    <div>
+    <div className="form-main">
       <Logo />
       <div
         style={{

@@ -8,6 +8,7 @@ const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const config = require("./config/key");
 const { auth } = require("./middleware/auth");
+const { async } = require("rxjs");
 
 // application/json으로된 데이터를 가져와서 분석할수있게 하는 코드
 app.use(express.json());
@@ -126,18 +127,13 @@ app.post("/api/users/footprint/write", (req, res) => {
   });
 });
 
-app.post("/api/users/footprint/read", (req, res) => {
-  // const footprint = new POST(req.body);
+app.post("/api/users/footprint/read", async (req, res) => {
+  // 총 게시글 세기
+  const total = await POST.countDocuments({});
+  const post = await POST.find({}).sort({ date: -1 });
 
-  POST.find(function (err, data) {
-    if (err) {
-      console.log(err);
-    } else {
-      console.log(data);
-      return res.json({
-        postData: data,
-      });
-    }
+  return res.json({
+    postData: post,
   });
 
   // footprint.save((err, doc) => {
@@ -148,6 +144,18 @@ app.post("/api/users/footprint/read", (req, res) => {
   // });
 });
 
+app.post("/api/users/footprint/delete", async (req, res) => {
+  let postId = req.body.id;
+  console.log("서버에서 받은 아이디", postId);
+  try {
+    await POST.findByIdAndRemove(postId).exec();
+    res.send({
+      deltePostSuccess: true,
+    });
+  } catch (e) {
+    res.json({ err: e });
+  }
+});
 const port = 5000;
 
 // 포트에서 앱 실행하게 함

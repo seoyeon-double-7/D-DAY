@@ -4,7 +4,7 @@
   /* background: #ff7777; */
   -webkit-font-smoothing: antialiased;
   position: absolute;
-  top: 10%;
+  top: 5%;
   left: 42%;
   /* display: flex;
   justify-content: center;
@@ -22,10 +22,10 @@ h1 span {
   position: relative;
   top: 20px;
   display: inline-block;
-  animation: bounce 0.3s ease infinite alternate;
+  animation: bounce 0.6s ease infinite alternate;
   font-family: "digital-7", Impact;
   font-size: 120px;
-  color: #6574dd;
+  color: #ffffff;
   text-shadow: 0 1px 0 #ccc, 0 2px 0 #ccc, 0 3px 0 #ccc, 0 4px 0 #ccc,
     0 5px 0 #ccc, 0 6px 0 transparent, 0 7px 0 transparent, 0 8px 0 transparent,
     0 9px 0 transparent, 0 10px 10px rgba(0, 0, 0, 0.4);

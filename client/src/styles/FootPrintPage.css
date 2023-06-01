@@ -29,6 +29,7 @@
 
 .footprint-submit:hover {
   transform: translateY(-10px);
+  background-color: transparent;
 }
 
 textarea {
@@ -42,12 +43,58 @@ textarea {
   resize: none;
   position: absolute;
   text-align: center;
-  top: 80%;
-  left: 13%;
+  top: 82%;
+  left: 15%;
   opacity: 80%;
 }
 
-.footprint-post-box {
+/* 포스트 */
+
+.grid-container {
+  display: grid;
+  grid-template-areas: "main";
+  grid-template-columns: 1fr;
+  grid-template-rows: 5rem 1fr 5rem;
+  height: 100%;
+}
+
+main {
+  margin-top: 5%;
+  margin-left: 8%;
+}
+
+.footprint-posts {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+}
+
+.footprint-posts li {
+  /* flex: 0 1 30rem; */
+  margin: 1rem;
+  margin-bottom: 0;
+  height: 13rem;
+}
+
+.footprint-post {
+  /* display: flex; */
+  width: 300px;
+  height: 130px;
+  padding: 30px;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 3px 3px 3px rgb(68, 68, 68);
+  background-color: white;
+  opacity: 90%;
+  cursor: pointer;
+}
+
+/* .footprint-post-box {
   margin-top: 140px;
   margin-right: 10px;
   margin-left: 10px;
@@ -61,11 +108,11 @@ textarea {
   float: left;
   transition: 0.5s;
   cursor: pointer;
-}
+} */
 
-.footprint-post-box:hover {
+/* .footprint-post-box:hover {
   transform: translateY(-5px);
-}
+} */
 
 .footprint-post-name {
   font-weight: bold;
@@ -74,6 +121,12 @@ textarea {
 }
 .footprint-post-date {
   color: rgb(104, 104, 104);
+}
+
+.footprint-btn {
+  width: 50px;
+  background-color: #ab937c;
+  margin-left: 90px;
 }
 
 .update-footprint-btn {
