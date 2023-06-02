@@ -10,10 +10,8 @@ function GamePage() {
 
   const handleKeyDown = (event) => {
     if(event.key == 'ArrowLeft'){
-      setCharacterPositionX(prevX => prevX - 10);
       setBackgroundPositionX(prevX => prevX + 10);
     } else if(event.key == 'ArrowRight'){
-      setCharacterPositionX(prevX => prevX + 10);
       setBackgroundPositionX(prevX => prevX - 10);
     }
   };
