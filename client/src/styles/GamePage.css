@@ -1,0 +1,25 @@
+.screen{
+    top: 0;
+    left: 0;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+    width: 1920px; /* 게임영역의 너비  5760 */
+    height: 1080px; /* 게임영역의 높이 */
+}
+
+.bg{
+    position: absolute;
+    top: 0;
+    height: 1080px;
+    width: 5760px;
+    background-image: url(../gamebg_ocean.png);
+}
+/* backgroundImage: `url(${bgImg})`,
+              left:`${backgroundPositionX}px`,
+              position: 'absolute',
+              top: '0',
+              height: '1080px',
+              width: '5760px' */
+
