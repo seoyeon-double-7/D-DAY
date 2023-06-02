@@ -5,14 +5,25 @@ import bgImg from '../../gamebg_ocean.png';
 
 function GamePage() {
   const navigate = useNavigate();
-  const [characterPositionX, setCharacterPositionX] = useState(50); // 캐릭터의 초기 x 좌표
-  const [backgroundPositionX, setBackgroundPositionX] = useState(0); // 배경 이미지의 초기 x 좌표
+  const [characterPositionX, setCharacterPositionX] = useState(1); // 캐릭터의 초기 x 좌표
+  const [backgroundPositionX, setBackgroundPositionX] = useState(0); // 배경 이미지의 초기
 
   const handleKeyDown = (event) => {
-    if(event.key == 'ArrowLeft'){
-      setBackgroundPositionX(prevX => prevX + 10);
-    } else if(event.key == 'ArrowRight'){
-      setBackgroundPositionX(prevX => prevX - 10);
+    
+    if (event.key === 'ArrowLeft') {
+        
+        setBackgroundPositionX(prevX => prevX + 10);
+        setCharacterPositionX(prevX => prevX - 10);
+        console.log(characterPositionX);
+        
+      
+    } else if (event.key === 'ArrowRight') {
+        
+        setBackgroundPositionX(prevX => prevX - 10);
+        setCharacterPositionX(prevX => prevX + 10);
+        console.log(characterPositionX);
+
+      
     }
   };
 
@@ -20,9 +31,11 @@ function GamePage() {
     window.addEventListener('keydown', handleKeyDown);
 
     return ()=>{
-      window.addEventListener('keydown', handleKeyDown);
+      window.removeEventListener('keydown', handleKeyDown);
     };
   }, []);
+
+
   return (
     <div className="screen">
       <div className="bg" 

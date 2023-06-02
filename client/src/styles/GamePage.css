@@ -1,8 +1,4 @@
 .screen{
-    top: 0;
-    left: 0;
-    padding: 0;
-    margin: 0;
     position: relative;
     overflow: hidden;
     width: 1920px; /* 게임영역의 너비  5760 */
