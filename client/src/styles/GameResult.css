@@ -1,0 +1,10 @@
+.game-result-box {
+  margin-top: 300px;
+  margin-left: 700px;
+  padding: 20px;
+  text-align: center;
+  width: 800px;
+  height: 400px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+}

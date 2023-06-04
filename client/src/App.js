@@ -4,13 +4,16 @@ import "./styles/App.css";
 import HomePage from "./pages/HomePage/HomePage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
+import Opening from "./Layout/Opening";
+import Ending from "./Layout/Ending";
+import GamePage from "./pages/GamePage/GamePage";
+import { GameClear } from "./pages/GamePage/GameResult";
 import FootPrintPage from "./pages/FootPrintPage/FootPrintPage";
 import RankPage from "./pages/RankPage/RankPage";
 import MyPage from "./pages/MyPage/MyPage";
-import GamePage from "./pages/GamePage/GamePage";
+
 // import Footer from "./Layout/Footer";
-import Opening from "./Layout/Opening";
-import Ending from "./Layout/Ending";
+
 import Auth from "./hoc/auth";
 
 function App() {
@@ -21,7 +24,7 @@ function App() {
   const NewFootPrintPage = Auth(FootPrintPage, true);
   const NewRankPage = Auth(RankPage, true);
   const NewMyPage = Auth(MyPage, true);
-  // const NewGamePage = Auth(GamePage, true);
+  const NewGamePage = Auth(GameClear, true);
 
   return (
     <div className="App">
@@ -38,6 +41,7 @@ function App() {
           <Route exact path="/ranking" element={<NewRankPage />} />
           <Route exact path="/mypage" element={<NewMyPage />} />
           <Route exact path="/d-day" element={<GamePage />} />
+          <Route exact path="/d-day/clear" element={<NewGamePage />} />
         </Routes>
       </Router>
     </div>

@@ -23,6 +23,7 @@ export default function f(SpecificComponent, option, adminRoute = null) {
         // 로그인 하지 아닐 때 로그인 페이지로 보내주기
         if (!response.payload.isAuth) {
           if (option) {
+            alert("⚡로그인하세요");
             navigate("/login");
           }
         } else {
