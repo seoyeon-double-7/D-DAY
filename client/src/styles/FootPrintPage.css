@@ -14,8 +14,8 @@
 
 .footprint-submit {
   position: absolute;
-  top: 765px;
-  left: 1460px;
+  top: 83%;
+  left: 85%;
   width: 100px;
   height: 100px;
   background-image: url("../../public/images/footprint_button.png");
@@ -59,8 +59,7 @@ textarea {
 }
 
 main {
-  margin-top: 5%;
-  margin-left: 8%;
+  margin-top: 12%;
 }
 
 .footprint-posts {

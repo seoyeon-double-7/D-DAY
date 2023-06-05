@@ -1,21 +1,4 @@
-/* .screen {
-  position: relative;
-  overflow: hidden;
-  width: 1920px; 
-  height: 1080px;
-} */
-/* 
-.bg {
-  background-color: red;
-  position: absolute;
+canvas {
   top: 0;
-  height: 1080px;
-  width: 5760px;
-  background-image: url(../img/mapImg/Morning/gamebg_ocean.png);
-} */
-/* backgroundImage: `url(${bgImg})`,
-              left:`${backgroundPositionX}px`,
-              position: 'absolute',
-              top: '0',
-              height: '1080px',
-              width: '5760px' */
+  left: 0;
+}

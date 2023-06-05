@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
-// import "../../styles/GamePage.css";
+import "../../styles/GamePage.css";
 
 // ****** 이미지 ******
 
@@ -45,33 +45,60 @@ function GamePage() {
     // 왼쪽
     if (e.key === "ArrowLeft") {
       if (character.x >= 0) {
-        setCharacter({
-          ...character,
-          x: character.x - 25,
-          dir: "left",
-          ldirNum: (character.ldirNum % 4) + 1,
-        });
+        let cnt = 0;
+        const timer = setInterval(() => {
+          setCharacter((preCharater) => {
+            return {
+              ...preCharater,
+              x: preCharater.x - 10,
+              dir: "left",
+              ldirNum: (preCharater.ldirNum % 4) + 1,
+            };
+          });
+          cnt++;
+          if (cnt === 3) clearInterval(timer);
+        }, 20);
+
         // setBackground({ ...background, x: background.x + 10 });
       }
     }
     // 오른쪽
     else if (e.key === "ArrowRight") {
       if (character.x < 1810) {
-        setCharacter({
-          ...character,
-          x: character.x + 25,
-          dir: "right",
-          rdirNum: (character.rdirNum % 4) + 1,
-        });
+        let cnt = 0;
+        const timer = setInterval(() => {
+          setCharacter((preCharater) => {
+            return {
+              ...preCharater,
+              x: preCharater.x + 10,
+              dir: "right",
+              rdirNum: (preCharater.rdirNum % 4) + 1,
+            };
+          });
+          cnt++;
+          if (cnt === 5) clearInterval(timer);
+        }, 20);
         // setBackground({ ...background, x: background.x - 10 });
       } else {
         if (background.bNum < 3) {
-          setCharacter({ ...character, x: 10 });
-          setBackground({
-            ...background,
-            x: background.x - 1900,
-            bNum: background.bNum + 1,
-          });
+          let cnt = 0;
+          const timer = setInterval(() => {
+            setCharacter((preCharacter) => {
+              return {
+                ...preCharacter,
+                x: preCharacter.x - 91,
+              };
+            });
+            setBackground((preBg) => {
+              return {
+                ...preBg,
+                x: preBg.x - 100,
+                bNum: background.bNum + 1,
+              };
+            });
+            cnt++;
+            if (cnt === 19) clearInterval(timer);
+          }, 40);
         } else {
           navigate("/d-day/clear");
         }

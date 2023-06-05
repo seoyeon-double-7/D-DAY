@@ -1,0 +1,10 @@
+.rank-box {
+  margin-top: 200px;
+  margin-left: 160px;
+  padding: 20px;
+  text-align: center;
+  width: 1600px;
+  height: 600px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+}

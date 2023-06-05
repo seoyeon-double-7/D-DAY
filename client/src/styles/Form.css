@@ -20,7 +20,7 @@
   height: "100vh";
 }
 
-button {
+.form-btn {
   color: rgb(255, 255, 255);
   background-color: rgb(52, 37, 12);
   border: none;
@@ -37,7 +37,7 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+.for-btn:hover {
   background-color: rgb(255, 255, 255);
 
   color: rgb(52, 37, 12);

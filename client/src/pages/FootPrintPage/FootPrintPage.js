@@ -96,7 +96,7 @@ function FootPrintPage() {
                     <br />
                     <span className="footprint-post-date">{element.date}</span>
                     <button
-                      className="footprint-btn"
+                      className="footprint-btn form-btn"
                       onClick={() => deletePost(element._id)}
                     >
                       삭제

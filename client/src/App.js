@@ -24,7 +24,6 @@ function App() {
   const NewFootPrintPage = Auth(FootPrintPage, true);
   const NewRankPage = Auth(RankPage, true);
   const NewMyPage = Auth(MyPage, true);
-  const NewGamePage = Auth(GameClear, true);
 
   return (
     <div className="App">
@@ -41,7 +40,7 @@ function App() {
           <Route exact path="/ranking" element={<NewRankPage />} />
           <Route exact path="/mypage" element={<NewMyPage />} />
           <Route exact path="/d-day" element={<GamePage />} />
-          <Route exact path="/d-day/clear" element={<NewGamePage />} />
+          <Route exact path="/d-day/clear" element={<GameClear />} />
         </Routes>
       </Router>
     </div>

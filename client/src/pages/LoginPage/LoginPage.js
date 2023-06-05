@@ -78,9 +78,13 @@ function LoginPage() {
 
           <br />
           <div className="button-box">
-            <button>로그인하기</button>
-            <button onClick={onGuestHandler}>게스트 플레이</button>
-            <button onClick={navigateToRegister}>회원가입하기</button>
+            <button className="form-btn">로그인하기</button>
+            <button className="form-btn" onClick={onGuestHandler}>
+              게스트 플레이
+            </button>
+            <button className="form-btn" onClick={navigateToRegister}>
+              회원가입하기
+            </button>
           </div>
         </form>
       </div>

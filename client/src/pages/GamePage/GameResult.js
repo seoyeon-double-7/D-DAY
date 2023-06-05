@@ -17,8 +17,8 @@ function GameClear() {
         <span className="quote-author">카케로</span>
         <br />
 
-        <button>다시하기</button>
-        <button onClick={() => navigate("/")}>홈으로 가기</button>
+        <button onClick={() => navigate("/d-day")}>다시하기</button>
+        <button onClick={() => navigate("/ranking")}>랭킹보러가기</button>
       </div>
 
       <Footer />

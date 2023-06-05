@@ -130,7 +130,7 @@ app.post("/api/users/footprint/write", (req, res) => {
 app.post("/api/users/footprint/read", async (req, res) => {
   // 총 게시글 세기
   const total = await POST.countDocuments({});
-  const post = await POST.find({}).sort({ date: -1 });
+  const post = await POST.find({}).sort({ date: -1 }).limit(8);
 
   return res.json({
     postData: post,

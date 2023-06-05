@@ -99,8 +99,10 @@ function RegisterPage() {
 
           <br />
           <div className="button-box">
-            <button>회원가입하기</button>
-            <button onClick={navigateToLogin}>로그인하러 가기</button>
+            <button className="form-btn">회원가입하기</button>
+            <button className="form-btn" onClick={navigateToLogin}>
+              로그인하러 가기
+            </button>
           </div>
         </form>
       </div>
