@@ -23,7 +23,8 @@ import character_left03 from "./img/morning/character_left/character_left_03.png
 import character_left04 from "./img/morning/character_left/character_left_04.png";
 
 // character_jump
-import character_jump from "./img/morning/character_jump/character_right_jump.png";
+import character_left_jump from "./img/morning/character_jump/character_left_jump.png";
+import character_right_jump from "./img/morning/character_jump/character_right_jump.png";
 
 function GamePage() {
   const canvasRef = useRef(null);
@@ -138,7 +139,11 @@ function GamePage() {
     const characterImage = new Image();
     let dir = character.dir;
     if (character.isJump) {
-      characterImage.src = character_jump;
+      if (dir === "right") {
+        characterImage.src = character_right_jump;
+      } else if (dir === "left") {
+        characterImage.src = character_left_jump;
+      }
     } else if (dir === "right") {
       // eslint-disable-next-line default-case
       switch (character.rdirNum) {
@@ -176,43 +181,88 @@ function GamePage() {
     }
     characterImage.addEventListener("load", () => {
       ctx.drawImage(characterImage, character.x, character.y, 100, 150);
-      console.log(
-        "character 이동중 : ",
-        character.x,
-        character.y,
-        character.dir,
-        "왼쪽 이동 수: ",
-        character.ldirNum,
-        "오른쪽 이동 수: ",
-        character.rdirNum
-      );
+      // console.log(
+      //   "character 이동중 : ",
+      //   character.x,
+      //   character.y,
+      //   character.dir,
+      //   "왼쪽 이동 수: ",
+      //   character.ldirNum,
+      //   "오른쪽 이동 수: ",
+      //   character.rdirNum
+      // );
     });
   };
 
   const jump = () => {
-    let cnt = 0;
-    const timer = setInterval(() => {
-      if (cnt < 5) {
-        setCharacter((preCharacter) => {
-          return {
-            ...preCharacter,
-            y: preCharacter.y - 40,
-            isJump: true,
-          };
-        });
-      } else {
-        setCharacter((preCharacter) => {
-          character.isJump = false;
-          return {
-            ...preCharacter,
-            y: preCharacter.y + 40,
-            isJump: false,
-          };
-        });
+    let currentPos = 0;
+    let height = 40;
+    let jumpCnt = 5;
+
+    // 점프 interval
+    const upTimer = setInterval(() => {
+      setCharacter((preCharacter) => {
+        /*
+        setInterval 함수 내에서 특정 좌표값이 됐을 때 upTimer을 종료하고 싶음
+        
+        문제점 : setCharacter  바로 밑에서 실시간으로 character.y를 찍어주면 800만 나옴
+        
+        이유 : setInterval 안에 정의된 hook인 setCharacter = state가 제일 처음 들어왔던 
+        character.y만 기억하기 때문!!! (hook이 불필요한 렌더링을 막기 위해 비동기적으로 작동하는 성질 떄문에 첫 y값만 기억)
+        "Object composition" => React는 setState를 여러번 만나면 호출 순서대로 업데이트 하지 않고 인자로 전달된 객체를 하나로 합치는 작업을 진행
+        객체가 하나로 합쳐지며 마지막 값만 반영되고씌어짐!!
+
+        해결방법 : 값을 전달하지 않고 함수를 달해서 이전 상태를 호출하고 업데이트 하는 "functional update"를 사용하자!
+        preCharacter의 y값 즉, 가장 최근 character.y값을 currentPos에 저장하고, 밑에서 currentPos가 특정 좌표값이면 upTimer 종료하기 성공!
+        */
+
+        // 전 character.y값을 불러오기 때문에 height 미리 더해주기
+
+        currentPos = preCharacter.y - height;
+        console.log(preCharacter.y);
+        return {
+          ...preCharacter,
+          y: preCharacter.y - height,
+          isJump: true,
+        };
+      });
+      // 800 - 40*5
+      console.log("currentPos : ", currentPos);
+      if (currentPos === initTop - height * jumpCnt) {
+        clearInterval(upTimer);
+
+        // setState할때 항상 기존값 복사하고 변경하기!
+        setCharacter({ ...character, y: currentPos });
+
+        // 착지 interval
+        const downTimer = setInterval(() => {
+          setCharacter((preCharacter) => {
+            currentPos = preCharacter.y;
+            return {
+              ...preCharacter,
+              y: preCharacter.y + height,
+              isJump: false,
+            };
+          });
+          // 함수 중괄호 확인 잘하기
+          if (currentPos === initTop - height * 2) {
+            clearInterval(downTimer);
+          }
+        }, 90);
       }
 
-      cnt++;
-      if (cnt === 10) clearInterval(timer);
+      // }
+      // else {
+      //   setCharacter((preCharacter) => {
+      //     return {
+      //       ...preCharacter,
+      //       y: preCharacter.y + 40,
+      //       isJump: false,
+      //     };
+      //   });
+      // }
+
+      // cnt++;
     }, 60);
   };
 
