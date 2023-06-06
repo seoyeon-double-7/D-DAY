@@ -22,17 +22,24 @@ import character_left02 from "./img/morning/character_left/character_left_02.png
 import character_left03 from "./img/morning/character_left/character_left_03.png";
 import character_left04 from "./img/morning/character_left/character_left_04.png";
 
+// character_jump
+import character_jump from "./img/morning/character_jump/character_right_jump.png";
+
 function GamePage() {
   const canvasRef = useRef(null);
   const navigate = useNavigate();
 
+  // init
+  const initTop = 800;
+
   const [background, setBackground] = useState({ x: 0, bNum: 1 }); // 캐릭터의 초기 x 좌표
   const [character, setCharacter] = useState({
     x: 10,
-    y: 800,
+    y: initTop,
     dir: "front",
     ldirNum: 0,
     rdirNum: 0,
+    isJump: false,
   }); // 배경 이미지의 초기
 
   useEffect(() => {
@@ -43,7 +50,7 @@ function GamePage() {
   // 캐릭터 이동
   const handleMove = (e) => {
     // 왼쪽
-    if (e.key === "ArrowLeft") {
+    if (e.code === "ArrowLeft") {
       if (character.x >= 0) {
         let cnt = 0;
         const timer = setInterval(() => {
@@ -63,7 +70,7 @@ function GamePage() {
       }
     }
     // 오른쪽
-    else if (e.key === "ArrowRight") {
+    else if (e.code === "ArrowRight") {
       if (character.x < 1810) {
         let cnt = 0;
         const timer = setInterval(() => {
@@ -104,6 +111,12 @@ function GamePage() {
         }
       }
     }
+    // 스페이스
+    else if (e.code === "Space") {
+      if (!character.isJump) {
+        jump();
+      }
+    }
   };
 
   // 배경 그려주기
@@ -124,7 +137,9 @@ function GamePage() {
     const ctx = canvasRef.current.getContext("2d");
     const characterImage = new Image();
     let dir = character.dir;
-    if (dir === "right") {
+    if (character.isJump) {
+      characterImage.src = character_jump;
+    } else if (dir === "right") {
       // eslint-disable-next-line default-case
       switch (character.rdirNum) {
         case 1:
@@ -172,6 +187,33 @@ function GamePage() {
         character.rdirNum
       );
     });
+  };
+
+  const jump = () => {
+    let cnt = 0;
+    const timer = setInterval(() => {
+      if (cnt < 5) {
+        setCharacter((preCharacter) => {
+          return {
+            ...preCharacter,
+            y: preCharacter.y - 40,
+            isJump: true,
+          };
+        });
+      } else {
+        setCharacter((preCharacter) => {
+          character.isJump = false;
+          return {
+            ...preCharacter,
+            y: preCharacter.y + 40,
+            isJump: false,
+          };
+        });
+      }
+
+      cnt++;
+      if (cnt === 10) clearInterval(timer);
+    }, 60);
   };
 
   return (
