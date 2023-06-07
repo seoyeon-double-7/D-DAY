@@ -5,7 +5,8 @@ import "../../styles/GamePage.css";
 // ****** 이미지 ******
 
 // 배경
-import bgImg from "./img/morning/map1_bg_ocean.png";
+import bgImg1 from "./img/morning/map1_bg.png";
+import bgImg2 from "./img/afternoon/map2_bg.png";
 
 // character
 import character_front from "./img/morning/character_front.png";
@@ -26,12 +27,31 @@ import character_left04 from "./img/morning/character_left/character_left_04.png
 import character_left_jump from "./img/morning/character_jump/character_left_jump.png";
 import character_right_jump from "./img/morning/character_jump/character_right_jump.png";
 
+// field
+import startFiled from "./img/morning/start_field.png";
+import filed from "./img/morning/main_field.png";
+
 function GamePage() {
   const canvasRef = useRef(null);
   const navigate = useNavigate();
 
   // init
-  const initTop = 800;
+  const initTop = 527;
+  // 발판 좌표
+  const filedPos = [
+    {
+      x: [290, 500, 690, 890, 1090, 1290, 1490, 1690],
+      y: [677, 620, 600, 680, 710, 670, 600, 530],
+    },
+    {
+      x: [40, 290, 530, 760, 970, 1200, 1490, 1690],
+      y: [500, 620, 600, 680, 710, 670, 600, 530],
+    },
+    {
+      x: [60, 290, 530, 760, 970, 1200, 1490, 1690],
+      y: [700, 620, 600, 680, 710, 670, 600, 530],
+    },
+  ];
 
   const [background, setBackground] = useState({ x: 0, bNum: 1 }); // 캐릭터의 초기 x 좌표
   const [character, setCharacter] = useState({
@@ -43,9 +63,15 @@ function GamePage() {
     isJump: false,
   }); // 배경 이미지의 초기
 
+  // useEffect(() => {
+  //   const ctx2 = canvasRef.current.getContext("2d");
+  //   drawField(ctx2);
+  // }, []);
   useEffect(() => {
-    drawBackground();
-    drawCharacter();
+    const ctx = canvasRef.current.getContext("2d");
+    drawBackground(ctx);
+    drawCharacter(ctx);
+    drawField(ctx);
   }, [character, background]);
 
   // 캐릭터 이동
@@ -88,28 +114,24 @@ function GamePage() {
         }, 20);
         // setBackground({ ...background, x: background.x - 10 });
       } else {
-        if (background.bNum < 3) {
-          let cnt = 0;
-          const timer = setInterval(() => {
-            setCharacter((preCharacter) => {
-              return {
-                ...preCharacter,
-                x: preCharacter.x - 91,
-              };
-            });
-            setBackground((preBg) => {
-              return {
-                ...preBg,
-                x: preBg.x - 100,
-                bNum: background.bNum + 1,
-              };
-            });
-            cnt++;
-            if (cnt === 19) clearInterval(timer);
-          }, 40);
-        } else {
-          navigate("/d-day/clear");
-        }
+        let cnt = 0;
+        const timer = setInterval(() => {
+          setCharacter((preCharacter) => {
+            return {
+              ...preCharacter,
+              x: preCharacter.x - 91,
+            };
+          });
+          setBackground((preBg) => {
+            return {
+              ...preBg,
+              x: preBg.x - 100,
+              bNum: background.bNum + 1,
+            };
+          });
+          cnt++;
+          if (cnt === 19) clearInterval(timer);
+        }, 40);
       }
     }
     // 스페이스
@@ -121,11 +143,21 @@ function GamePage() {
   };
 
   // 배경 그려주기
-  const drawBackground = () => {
-    const ctx = canvasRef.current.getContext("2d");
-
+  const drawBackground = (ctx) => {
     const bgImage = new Image();
-    bgImage.src = bgImg;
+    if (background.bNum < 3) bgImage.src = bgImg1;
+    else if (background.bNum < 6) bgImage.src = bgImg2;
+    // eslint-disable-next-line default-case
+    // switch (background.bNum / 3) {
+    //   case 0:
+    //     bgImage.src = bgImg1;
+    //     break;
+
+    //   case 1:
+    //     bgImage.src = bgImg2;
+    //     break;
+    // }
+
     bgImage.addEventListener("load", () => {
       ctx.drawImage(bgImage, background.x, 0);
 
@@ -133,9 +165,32 @@ function GamePage() {
     });
   };
 
+  const drawField = (ctx) => {
+    const filedStartImage = new Image();
+    filedStartImage.src = startFiled;
+    if (background.bNum === 1) {
+      filedStartImage.addEventListener("load", () => {
+        ctx.drawImage(filedStartImage, 0, 677, 275, 403);
+      });
+    }
+
+    const filedImage = new Image();
+    filedImage.src = filed;
+    filedImage.addEventListener("load", () => {
+      for (let i = 0; i < 8; i++) {
+        ctx.drawImage(
+          filedImage,
+          filedPos[background.bNum - 1].x[i],
+          filedPos[background.bNum - 1].y[i],
+          141,
+          53
+        );
+      }
+    });
+  };
+
   // 캐릭터 그려주기
-  const drawCharacter = () => {
-    const ctx = canvasRef.current.getContext("2d");
+  const drawCharacter = (ctx) => {
     const characterImage = new Image();
     let dir = character.dir;
     if (character.isJump) {

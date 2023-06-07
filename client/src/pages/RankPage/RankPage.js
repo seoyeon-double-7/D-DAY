@@ -9,10 +9,6 @@ function RankPage() {
 
       <div className="rank-box">
         <h1>RANK</h1>
-        <button>morning</button>
-        <button>afternoon</button>
-        <button>dinner</button>
-        <button>night</button>
 
         <div className="rank-data">
           <span>
@@ -20,6 +16,7 @@ function RankPage() {
           </span>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }
