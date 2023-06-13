@@ -102,6 +102,22 @@
   animation: none;
 }
 
+.ending-logo{
+  position: absolute;
+  height: 10%;
+  top: 35%;
+  left: 31%;
+  z-index: 3;
+}
+
+.ending-text{
+  position: absolute;
+  height: 15%;
+  top: 50%;
+  left: 33%;
+  z-index: 3;
+}
+
 @-webkit-keyframes blink {
   0% {
     opacity: 0;
@@ -128,3 +144,38 @@
     opacity: 1;
   }
 }
+
+.credit-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 5;
+  font-family: "digital-7";
+  font-size: 30px;
+  color: #fff;
+  text-align: center;
+  animation: credit-animation 10s linear infinite; 
+  animation-iteration-count: 1; /* 애니메이션이 한번만 실행*/
+  animation-fill-mode: forwards;  /* 애니메이션 종료 위치 유지 */
+}
+
+@keyframes credit-animation {
+  0% {
+    bottom: 0;
+  }
+  100% {
+    bottom: 45%;
+  }
+}
+
+/* .credit-text.animation-ended {
+  animation-play-state: paused;  애니메이션 종료 후에 "paused"로 설정하여 애니메이션 멈춤 
+   animation-iteration-count: 1; 애니메이션이 한번만 실행
+  animation-fill-mode: forwards;  애니메이션 종료 위치 유지 
+} */
+
+/* .credit-text animation-ended {
+  bottom: 45%;  애니메이션 종료 위치 유지 
+  animation: none;  애니메이션 제거 
+} */

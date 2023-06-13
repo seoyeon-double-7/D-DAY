@@ -15,7 +15,9 @@ const Ending = () => {
   const images = [
     { bg: "village.png", character: "ending_ch1.png" },
     { bg: "gg.png", character: "ending_ch2.png" },
-    { bg: "classroom_sunset.png", character: "ending_ch3.png" }
+    { bg: "classroom_sunset.png", character: "ending_ch3.png" },
+    { bg: "endingbg.png", character: "" },
+    { bg: "endingbg.png", character: "" }
   ];
 
   // 엔딩 왼쪽 스크립트
@@ -34,7 +36,9 @@ const Ending = () => {
     "네!! 덕분에 전 친구의 소중함, 저의 진정한 사람, 우리 가족의 행복, 마지막으로 제 삶의 이유까지 잃어버린걸 되찾는 기분이었어요.",
     "",
     "돌아왔네..",
-    "생각보다 긴 꿈이었다.."
+    "생각보다 긴 꿈이었다..",
+    "",
+    ""
   ];
 
   // 엔딩 오른쪽 스크립트
@@ -53,7 +57,20 @@ const Ending = () => {
     "",
     "그럼 이제부터 너에게 맡기겠다",
     "",
+    "",
+    "",
     ""
+  ];
+
+  const developers = [
+    '김선혜',
+    '배서연',
+    '편은진'
+  ];
+  
+  const designers = [
+    '오은채',
+    '한나현'
   ];
 
   // 엔딩 화면 전환 이펙트
@@ -61,9 +78,11 @@ const Ending = () => {
     setLine((i) => i + 1);
     setText("");
     setCount(0);
-    if (line == 1 || line == 12)
+    if (line == 1 || line == 12 || line == 14 || line == 15)
       setIndex((i) => i + 1);
-    if (line == 14) goHome();
+      if (line == 16) {
+       
+      }
   };
 
   function goHome() {
@@ -75,7 +94,6 @@ const Ending = () => {
     const interval = setInterval(() => {
       let txt = state === "left" ? linesLeft[line] : linesRight[line];
       setText(text + txt[count]);
-
       setCount(count + 1);
     }, 50);
     if (
@@ -84,34 +102,68 @@ const Ending = () => {
     ) {
       clearInterval(interval);
     }
+
     return () => clearInterval(interval);
   });
 
   return (
     <div className="home">
-      <img
-        className="next"
-        src={`/images/next.png`}
-        onClick={changeScreen}
-        alt=""
-      />
       <img className="bg" src={`/images/${images[index].bg}`} alt="" />
 
-      <img className="skip" src={`/images/skip.png`} onClick={goHome} alt="" />
-      <img className="textbox" src={`/images/textbox.png`} alt="" />
+      {index === 3 && (
+        <>
+          <img className="ending-logo"
+            src={`/images/ending_logo.png`} />
+          {/* "한번밖에 없는 삶.멋지게 인생을 꾸며보는 것은 어떨까요?" */}
+          <img className="ending-text"
+            src={`/images/ending_text.png`} />
+        </>
+      )}
 
-      <img
-        className="character"
-        src={`/images/${images[index].character}`}
-        alt=""
-      />
+      {index < 4 && (
 
-      <div className="line">
-        <img className="namebox" src={`/images/namebox.png`} alt="" />
-        <img className="name" src={`/images/name.png`} alt="" />
-        <div className="line-left">{state === "left" ? text : ""}</div>
-        <div className="line-right">{state === "right" ? text : ""}</div>
-      </div>
+        <img
+          className="next"
+          src={`/images/next.png`}
+          onClick={changeScreen}
+          alt=""
+        />
+      )}
+
+      {index < 3 && (
+        <>
+          <img className="skip" src={`/images/skip.png`} onClick={goHome} alt="" />
+          <img className="textbox" src={`/images/textbox.png`} alt="" />
+
+          <img
+            className="character"
+            src={`/images/${images[index].character}`}
+            alt=""
+          />
+
+          <div className="line">
+            <img className="namebox" src={`/images/namebox.png`} alt="" />
+            <img className="name" src={`/images/name.png`} alt="" />
+            <div className="line-left">{state === "left" ? text : ""}</div>
+            <div className="line-right">{state === "right" ? text : ""}</div>
+          </div>
+        </>
+      )}
+
+      {index === 4 && (
+        <>
+          <div className='credit-text'>
+            <h2>개발자</h2> 
+            {developers.map((name, index) => (
+              <p key={index}>{name}</p>
+            ))}&nbsp;
+            <h2>디자이너</h2>
+            {designers.map((name, index) => (
+              <p key={index}>{name}</p>
+            ))}
+        </div>
+        </>
+      )}
     </div>
   );
 };
