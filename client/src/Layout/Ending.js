@@ -85,9 +85,14 @@ const Ending = () => {
       }
   };
 
-  function goHome() {
+  const navigateToHome = () => {
     navigate("/");
-  }
+  };
+
+  // 발자취 화면 이동
+  const navigateToFootPrint = () => {
+    navigate("/footprint");
+  };
 
   useEffect(() => {
     setState(linesLeft[line].length ? "left" : "right");
@@ -132,7 +137,7 @@ const Ending = () => {
 
       {index < 3 && (
         <>
-          <img className="skip" src={`/images/skip.png`} onClick={goHome} alt="" />
+          <img className="skip" src={`/images/skip.png`} onClick={navigateToHome} alt="" />
           <img className="textbox" src={`/images/textbox.png`} alt="" />
 
           <img
@@ -160,8 +165,12 @@ const Ending = () => {
             <h2>디자이너</h2>
             {designers.map((name, index) => (
               <p key={index}>{name}</p>
-            ))}
-        </div>
+            ))}<br></br>
+            <img className="mirimlogo" src={`/images/mirimlogo.png`} alt="" />
+            <h2 className="thankyou">감사합니다</h2>
+            <img className="footprintbtn" src={`/images/footprint.png`} onClick={navigateToFootPrint} alt="" />
+          </div>
+          
         </>
       )}
     </div>

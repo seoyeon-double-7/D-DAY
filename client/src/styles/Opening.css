@@ -165,17 +165,27 @@
     bottom: 0;
   }
   100% {
-    bottom: 45%;
+    bottom: 40%;
   }
 }
 
-/* .credit-text.animation-ended {
-  animation-play-state: paused;  애니메이션 종료 후에 "paused"로 설정하여 애니메이션 멈춤 
-   animation-iteration-count: 1; 애니메이션이 한번만 실행
-  animation-fill-mode: forwards;  애니메이션 종료 위치 유지 
-} */
 
-/* .credit-text animation-ended {
-  bottom: 45%;  애니메이션 종료 위치 유지 
-  animation: none;  애니메이션 제거 
-} */
+.mirimlogo {
+  position: absolute;
+  height: 10%;
+  left: 42%;
+  z-index: 3;
+}
+
+.thankyou {
+  position: absolute;
+  top: 115%;
+  width: 100%;
+}
+
+.footprintbtn{
+  position: absolute;
+  top: 140%;
+  left: 48%;
+  height: 15%;
+}
