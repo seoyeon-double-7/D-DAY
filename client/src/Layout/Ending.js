@@ -117,11 +117,13 @@ const Ending = () => {
 
       {index === 3 && (
         <>
-          <img className="ending-logo"
-            src={`/images/ending_logo.png`} />
-          {/* "한번밖에 없는 삶.멋지게 인생을 꾸며보는 것은 어떨까요?" */}
-          <img className="ending-text"
-            src={`/images/ending_text.png`} />
+          <div className="the-end">
+            <img className="ending-logo"
+              src={`/images/ending_logo.png`} />
+            {/* "한번밖에 없는 삶.멋지게 인생을 꾸며보는 것은 어떨까요?" */}
+            <img className="ending-text"
+              src={`/images/ending_text.png`} />
+          </div>
         </>
       )}
 
