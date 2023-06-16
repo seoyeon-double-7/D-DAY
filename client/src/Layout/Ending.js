@@ -113,6 +113,8 @@ const Ending = () => {
 
   return (
     <div className="home">
+      <ReactAudioPlayer id="backgroundAudio" src={"/audio/ending.mp3" } autoPlay={true} loop/>
+
       <img className="bg" src={`/images/${images[index].bg}`} alt="" />
 
       {index === 3 && (
