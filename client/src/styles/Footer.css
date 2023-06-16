@@ -2,7 +2,7 @@
   position: absolute;
   width: 9%;
   height: 9%;
-  top: 91%;
+  top: 93%;
   left: 5%;
   background-image: url("../../public/images/nav_opening.png");
   background-size: contain;
@@ -47,8 +47,8 @@
   position: absolute;
   width: 7%;
   height: 7%;
-  top: 91%;
-  left: 90%;
+  top: 93%;
+  left: 88%;
   background-image: url("../../public/images/ending.png");
   background-size: contain;
   background-repeat: no-repeat;
