@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { loginUser } from "../../_actions/user_action";
 import { useNavigate } from "react-router-dom";
+import ReactAudioPlayer from "react-audio-player";
 import Logo from "./Settings/showLogo";
 import "../../styles/Form.css";
 // import { guest_account } from "./Settings/guest_account";
@@ -43,6 +44,11 @@ function LoginPage() {
     });
   };
 
+  useEffect(() => {
+    const audioElement = document.getElementById("mainAudio");
+    audioElement.play();
+  }, []);
+
   const onGuestHandler = (event) => {
     event.preventDefault();
     // isAuth가 false인 상태로 바로 홈화면으로 이동
@@ -50,6 +56,7 @@ function LoginPage() {
   };
   return (
     <div className="form-main">
+      <ReactAudioPlayer id="mainAudio" src={"/audio/login_signup.mp3" } autoPlay={true} loop  style={{display:"none"}}/>
       <Logo />
       <div
         style={{

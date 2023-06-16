@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import ReactAudioPlayer from "react-audio-player";
 import "../../styles/GamePage.css";
+
 
 // ****** 이미지 ******
 
@@ -67,6 +69,12 @@ function GamePage() {
   //   const ctx2 = canvasRef.current.getContext("2d");
   //   drawField(ctx2);
   // }, []);
+
+  useEffect(() => {
+    const audioElement = document.getElementById("gameAudio");
+    audioElement.play();
+  }, []);
+
   useEffect(() => {
     const ctx = canvasRef.current.getContext("2d");
     drawBackground(ctx);
@@ -323,6 +331,7 @@ function GamePage() {
 
   return (
     <div>
+      <ReactAudioPlayer id="gameAudio" src={"/audio/game_morning.mp3" } autoPlay={true} loop  style={{display:"none"}}/>
       {/* canvas 안에서 useRef hook을 사용해서 canvas DOM에 접근 */}
       <canvas
         width={"1920"}

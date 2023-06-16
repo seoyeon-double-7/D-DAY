@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../styles/Opening.css";
 import { useNavigate } from "react-router-dom";
+import ReactAudioPlayer from "react-audio-player";
 
 const Opening = () => {
   const navigate = useNavigate();
@@ -65,6 +66,11 @@ const Opening = () => {
   }
 
   useEffect(() => {
+    const audioElement = document.getElementById("openingAudio");
+    audioElement.play();
+  }, []);
+
+  useEffect(() => {
     setState(linesLeft[line].length ? "left" : "right");
     const interval = setInterval(() => {
       let txt = state === "left" ? linesLeft[line] : linesRight[line];
@@ -83,7 +89,8 @@ const Opening = () => {
 
   return (
     <div className="home">
-      <ReactAudioPlayer id="backgroundAudio" src={"/audio/opening.mp3" } autoPlay={true} loop/>
+      <ReactAudioPlayer id="openingAudio" src={"/audio/ending.mp3" } autoPlay={true} loop  style={{display:"none"}}/>
+      
 
       <img
         className="next"

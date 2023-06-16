@@ -7,6 +7,7 @@ import { getPost } from "../../_actions/footprint_action";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import axios from "axios";
+import ReactAudioPlayer from "react-audio-player";
 
 var moment = require("moment-timezone");
 
@@ -71,6 +72,10 @@ function FootPrintPage() {
       }
     });
   };
+  useEffect(() => {
+    const audioElement = document.getElementById("postAudio");
+    audioElement.play();
+  }, []);
 
   useEffect(() => {
     getPosts();
@@ -78,6 +83,7 @@ function FootPrintPage() {
 
   return (
     <div className="footprint-background">
+      <ReactAudioPlayer id="postAudio" src={"/audio/mypage.mp3" } autoPlay={true} loop style={{display:"none"}}/>
       <Nav />
       {/* 포스트 보여주는 부분 */}
 
