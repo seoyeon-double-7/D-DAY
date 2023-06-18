@@ -91,7 +91,7 @@ const Opening = () => {
     <div className="home">
       <ReactAudioPlayer
         id="openingAudio"
-        src={"/audio/scenario.mp3"}
+        src={"/audio/opening.mp3"}
         autoPlay={true}
         loop
         style={{ display: "none" }}

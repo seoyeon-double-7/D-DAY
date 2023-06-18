@@ -113,7 +113,7 @@ const Ending = () => {
     <div className="home">
       <ReactAudioPlayer
         id="endingAudio"
-        src={"/audio/scenario.mp3"}
+        src={"/audio/ending.mp3"}
         autoPlay={true}
         loop
       />
