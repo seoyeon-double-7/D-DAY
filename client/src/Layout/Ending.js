@@ -18,7 +18,7 @@ const Ending = () => {
     { bg: "gg.png", character: "ending_ch2.png" },
     { bg: "classroom_sunset.png", character: "ending_ch3.png" },
     { bg: "endingbg.png", character: "" },
-    { bg: "endingbg.png", character: "" }
+    { bg: "endingbg.png", character: "" },
   ];
 
   // 엔딩 왼쪽 스크립트
@@ -39,7 +39,7 @@ const Ending = () => {
     "돌아왔네..",
     "생각보다 긴 꿈이었다..",
     "",
-    ""
+    "",
   ];
 
   // 엔딩 오른쪽 스크립트
@@ -60,19 +60,12 @@ const Ending = () => {
     "",
     "",
     "",
-    ""
+    "",
   ];
 
-  const developers = [
-    '김선혜',
-    '배서연',
-    '편은진'
-  ];
-  
-  const designers = [
-    '오은채',
-    '한나현'
-  ];
+  const developers = ["김선혜", "배서연", "편은진"];
+
+  const designers = ["오은채", "한나현"];
 
   // 엔딩 화면 전환 이펙트
   const changeScreen = () => {
@@ -81,9 +74,8 @@ const Ending = () => {
     setCount(0);
     if (line == 1 || line == 12 || line == 14 || line == 15)
       setIndex((i) => i + 1);
-      if (line == 16) {
-       
-      }
+    if (line == 16) {
+    }
   };
 
   const navigateToHome = () => {
@@ -119,24 +111,26 @@ const Ending = () => {
 
   return (
     <div className="home">
-      <ReactAudioPlayer id="endingAudio" src={"/audio/ending.mp3" } autoPlay={true} loop/>
+      <ReactAudioPlayer
+        id="endingAudio"
+        src={"/audio/scenario.mp3"}
+        autoPlay={true}
+        loop
+      />
 
       <img className="bg" src={`/images/${images[index].bg}`} alt="" />
 
       {index === 3 && (
         <>
           <div className="the-end">
-            <img className="ending-logo"
-              src={`/images/ending_logo.png`} />
+            <img className="ending-logo" src={`/images/ending_logo.png`} />
             {/* "한번밖에 없는 삶.멋지게 인생을 꾸며보는 것은 어떨까요?" */}
-            <img className="ending-text"
-              src={`/images/ending_text.png`} />
+            <img className="ending-text" src={`/images/ending_text.png`} />
           </div>
         </>
       )}
 
       {index < 4 && (
-
         <img
           className="next"
           src={`/images/next.png`}
@@ -147,7 +141,12 @@ const Ending = () => {
 
       {index < 3 && (
         <>
-          <img className="skip" src={`/images/skip.png`} onClick={navigateToHome} alt="" />
+          <img
+            className="skip"
+            src={`/images/skip.png`}
+            onClick={navigateToHome}
+            alt=""
+          />
           <img className="textbox" src={`/images/textbox.png`} alt="" />
 
           <img
@@ -167,20 +166,26 @@ const Ending = () => {
 
       {index === 4 && (
         <>
-          <div className='credit-text'>
-            <h2>개발자</h2> 
+          <div className="credit-text">
+            <h2>개발자</h2>
             {developers.map((name, index) => (
               <p key={index}>{name}</p>
-            ))}&nbsp;
+            ))}
+            &nbsp;
             <h2>디자이너</h2>
             {designers.map((name, index) => (
               <p key={index}>{name}</p>
-            ))}<br></br>
+            ))}
+            <br></br>
             <img className="mirimlogo" src={`/images/mirimlogo.png`} alt="" />
             <h2 className="thankyou">감사합니다</h2>
-            <img className="footprintbtn" src={`/images/footprint.png`} onClick={navigateToFootPrint} alt="" />
+            <img
+              className="footprintbtn"
+              src={`/images/footprint.png`}
+              onClick={navigateToFootPrint}
+              alt=""
+            />
           </div>
-          
         </>
       )}
     </div>

@@ -89,8 +89,13 @@ const Opening = () => {
 
   return (
     <div className="home">
-      <ReactAudioPlayer id="openingAudio" src={"/audio/ending.mp3" } autoPlay={true} loop  style={{display:"none"}}/>
-      
+      <ReactAudioPlayer
+        id="openingAudio"
+        src={"/audio/scenario.mp3"}
+        autoPlay={true}
+        loop
+        style={{ display: "none" }}
+      />
 
       <img
         className="next"
