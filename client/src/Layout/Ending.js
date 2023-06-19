@@ -156,8 +156,14 @@ const Ending = () => {
           />
 
           <div className="line">
-            <img className="namebox" src={`/images/namebox.png`} alt="" />
-            <img className="name" src={`/images/name.png`} alt="" />
+            <img className="namebox-l" src={`/images/namebox.png`} alt="" />
+            <img className="name-l" src={`/images/name.png`} alt="" />
+            {(line > 1 && line < 13) && (
+              <>
+                <img className="namebox-r" src={`/images/namebox.png`} alt="" />
+                <img className="name-r" style={{left: '78%'}}src={`/images/god.png`} alt="" />
+              </>
+            )}
             <div className="line-left">{state === "left" ? text : ""}</div>
             <div className="line-right">{state === "right" ? text : ""}</div>
           </div>

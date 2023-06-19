@@ -27,7 +27,7 @@
   font-size: 30px;
   text-align: left;
   top: 78%;
-  left: 18%;
+  left: 13%;
   z-index: 5;
 }
 
@@ -71,19 +71,35 @@
   }
 }
 
-.namebox {
+.namebox-l {
   position: absolute;
   height: 6%;
   top: 65%;
-  left: 18%;
+  left: 12%;
   z-index: 5;
 }
 
-.name {
+.name-l {
   position: absolute;
   height: 4%;
   top: 66%;
-  left: 23%;
+  left: 17.3%;
+  z-index: 6;
+}
+
+.namebox-r {
+  position: absolute;
+  height: 6%;
+  top: 65%;
+  left: 71.3%;
+  z-index: 5;
+}
+
+.name-r {
+  position: absolute;
+  height: 4%;
+  top: 66%;
+  left: 77%;
   z-index: 6;
 }
 

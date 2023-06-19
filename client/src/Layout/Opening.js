@@ -52,7 +52,11 @@ const Opening = () => {
     "",
     "",
   ];
-  const changeScreen = () => {
+
+  const character_name = ["", "doctor.png", "grandfather.png"];
+  const character_name_location = ["", "77%", "75.6%"];
+  
+  function changeScreen(){
     setLine((i) => i + 1);
     setText("");
     setCount(0);
@@ -60,6 +64,24 @@ const Opening = () => {
       setIndex((i) => i + 1);
     if (line === 13) goHome();
   };
+
+  // async function changeScreen() {
+  //   setLine((i) => i + 1);
+  //   setText("");
+  //   setCount(0);
+  //   if (line === 3 || line === 7 || line === 11 || line === 13) {
+  //     await new Promise((resolve) => {
+  //       setIndex((i) => i + 1);
+  //       resolve();
+  //     });
+  //   }
+  //   if (line === 13) {
+  //     await new Promise((resolve) => {
+  //       goHome();
+  //       resolve();
+  //     });
+  //   }
+  // }
 
   function goHome() {
     navigate("/");
@@ -70,12 +92,12 @@ const Opening = () => {
     audioElement.play();
   }, []);
 
+  // 타자여기에 넣을거임
   useEffect(() => {
     setState(linesLeft[line].length ? "left" : "right");
     const interval = setInterval(() => {
       let txt = state === "left" ? linesLeft[line] : linesRight[line];
       setText(text + txt[count]);
-
       setCount(count + 1);
     }, 50);
     if (
@@ -115,8 +137,20 @@ const Opening = () => {
       />
 
       <div className="line">
-        <img className="namebox" src={`/images/namebox.png`} alt="" />
-        <img className="name" src={`/images/name.png`} alt="" />
+        <img className="namebox-l" src={`/images/namebox.png`} alt="" />
+        <img className="name-l" src={`/images/name.png`} alt="" />
+        {(line > -1 && line < 4) && (
+          <>
+            <img className="namebox-r" src={`/images/namebox.png`} alt="" />
+            <img className="name-r" src={`/images/friend.png`} alt="" />
+          </>
+        )}
+        {(line > 3 && line < 12)&& (
+          <>
+            <img className="namebox-r" src={`/images/namebox.png`} alt="" />
+            <img className="name-r" src={`/images/${index === 0 ? character_name[0] : character_name[index]}`} style={{left: character_name_location[index]}} alt="" />
+          </>
+        )}
         <div className="line-left">{state === "left" ? text : ""}</div>
         <div className="line-right">{state === "right" ? text : ""}</div>
       </div>
