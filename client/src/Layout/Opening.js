@@ -58,30 +58,19 @@ const Opening = () => {
   
   function changeScreen(){
     setLine((i) => i + 1);
+    
+    console.log("타이핑")
+    // 타이핑 효과음
+    const audioElement = document.getElementById("typingAudio");
+    audioElement.load();
+    audioElement.play();
+
     setText("");
     setCount(0);
     if (line === 3 || line === 7 || line === 11 || line === 13)
       setIndex((i) => i + 1);
     if (line === 13) goHome();
   };
-
-  // async function changeScreen() {
-  //   setLine((i) => i + 1);
-  //   setText("");
-  //   setCount(0);
-  //   if (line === 3 || line === 7 || line === 11 || line === 13) {
-  //     await new Promise((resolve) => {
-  //       setIndex((i) => i + 1);
-  //       resolve();
-  //     });
-  //   }
-  //   if (line === 13) {
-  //     await new Promise((resolve) => {
-  //       goHome();
-  //       resolve();
-  //     });
-  //   }
-  // }
 
   function goHome() {
     navigate("/");
@@ -90,9 +79,12 @@ const Opening = () => {
   useEffect(() => {
     const audioElement = document.getElementById("openingAudio");
     audioElement.play();
+    const audioElement2 = document.getElementById("typingAudio");
+    audioElement2.load();
+    audioElement2.play();
+    
   }, []);
 
-  // 타자여기에 넣을거임
   useEffect(() => {
     setState(linesLeft[line].length ? "left" : "right");
     const interval = setInterval(() => {
@@ -118,6 +110,26 @@ const Opening = () => {
         loop
         style={{ display: "none" }}
       />
+
+      <ReactAudioPlayer
+         id="typingAudio"
+         src={"/audio/effect/typing.mp3"}
+         autoPlay={false}
+        loop={false}
+         style={{ display: "none" }}
+       />
+
+      {index < 1 && (
+        <>
+        <ReactAudioPlayer
+          id="typingAudio"
+          src={"/audio/effect/typing.mp3"}
+          autoPlay={false}
+          loop={false}
+          style={{ display: "play" }}
+        />
+        </>
+      )}
 
       <img
         className="next"
