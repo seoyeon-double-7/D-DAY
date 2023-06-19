@@ -70,6 +70,12 @@ const Ending = () => {
   // 엔딩 화면 전환 이펙트
   const changeScreen = () => {
     setLine((i) => i + 1);
+
+    // 타이핑 효과음
+    const audioElement = document.getElementById("typingAudio");
+    audioElement.load();
+    audioElement.play();
+    
     setText("");
     setCount(0);
     if (line == 1 || line == 12 || line == 14 || line == 15)
@@ -90,6 +96,9 @@ const Ending = () => {
   useEffect(() => {
     const audioElement = document.getElementById("endingAudio");
     audioElement.play();
+    const audioElement2 = document.getElementById("typingAudio");
+    audioElement2.load();
+    audioElement2.play();
   }, []);
 
   useEffect(() => {
