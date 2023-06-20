@@ -14,23 +14,22 @@
 
 .mypage-box {
   /* display: flex; */
-  position: relative;
-  font-size: 10px;
+  position: absolute;
   border-radius: 20px;
   background-color: rgb(255, 255, 255);
   opacity: 80%;
   width: 750px;
   height: 600px;
   /* 위 오른쪽 아래 왼쪽 */
-  margin: 180px 85px;
+  margin: 260px 100px;
 }
 
 .profile-img {
   position: absolute;
-  width: 170px;
-  height: 170px;
-  left: 7%;
-  top: 36%;
+  width: 140px;
+  height: 140px;
+  left: 9%;
+  top: 40%;
   border-radius: 100px;
   transform: translateY(-100px);
   /* box-shadow: 0 3px 6px 0 rgba(112, 112, 112, 0.16); */
@@ -43,11 +42,33 @@
   top: 36%;
 }
 .MypageTextContainer .profile-name {
+  position: absolute;
   color: rgb(71, 71, 71);
-  font-size: 2em;
+  font-size: 2.6em;
   font-weight: bold;
+  z-index: 1;
+  top: -30px;
+  left: -20px;
 }
 .MypageTextContainer .profile-email {
-  font-size: 1em;
+  position: absolute;
+  font-size: 1.5em;
   color: rgb(88, 88, 88);
+  z-index: 1;
+  top: 30px;
+  left: -20px;
 }
+
+.footprint-box{
+    display: inline-block;
+    position: absolute;
+    font-size: 10px;
+    border-radius: 20px;
+    background-color: rgb(255, 255, 255);
+    opacity: 80%;
+    width: 750px;
+    height: 600px;
+    /* 위 오른쪽 아래 왼쪽 */
+    margin: 260px 1000px;
+}
+
