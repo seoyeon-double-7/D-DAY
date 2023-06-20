@@ -120,12 +120,45 @@ const Ending = () => {
 
   return (
     <div className="home">
-      <ReactAudioPlayer
+      {index < 0 && index > 3 && (
+        <ReactAudioPlayer
         id="endingAudio"
         src={"/audio/ending.mp3"}
         autoPlay={true}
         loop
-      />
+        />
+      )}
+
+      {index > 2 && (
+        <ReactAudioPlayer
+        id="endingAudio"
+        src={"/audio/credit.mp3"}
+        autoPlay={true}
+        loop
+        style={{ display: "play" }}
+        />
+      )}
+
+
+      <ReactAudioPlayer
+         id="typingAudio"
+         src={"/audio/effect/typing.mp3"}
+         autoPlay={false}
+        loop={false}
+         style={{ display: "none" }}
+       />
+
+      {index < 1 && (
+        <>
+        <ReactAudioPlayer
+          id="typingAudio"
+          src={"/audio/effect/typing.mp3"}
+          autoPlay={false}
+          loop={false}
+          style={{ display: "play" }}
+        />
+        </>
+      )}
 
       <img className="bg" src={`/images/${images[index].bg}`} alt="" />
 
