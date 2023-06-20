@@ -2,16 +2,13 @@ import React, { useState, useEffect } from "react";
 import "../styles/Opening.css";
 import { useNavigate } from "react-router-dom";
 import ReactAudioPlayer from "react-audio-player";
-
 const Ending = () => {
   const navigate = useNavigate();
-
   const [text, setText] = useState("");
   const [count, setCount] = useState(0);
   const [index, setIndex] = useState(0);
   const [line, setLine] = useState(0);
   const [state, setState] = useState("");
-
   // 엔딩 이미지
   const images = [
     { bg: "village.png", character: "ending_ch1.png" },
@@ -70,12 +67,6 @@ const Ending = () => {
   // 엔딩 화면 전환 이펙트
   const changeScreen = () => {
     setLine((i) => i + 1);
-
-    // 타이핑 효과음
-    const audioElement = document.getElementById("typingAudio");
-    audioElement.load();
-    audioElement.play();
-    
     setText("");
     setCount(0);
     if (line == 1 || line == 12 || line == 14 || line == 15)
@@ -87,20 +78,14 @@ const Ending = () => {
   const navigateToHome = () => {
     navigate("/");
   };
-
   // 발자취 화면 이동
   const navigateToFootPrint = () => {
     navigate("/footprint");
   };
-
   useEffect(() => {
     const audioElement = document.getElementById("endingAudio");
     audioElement.play();
-    const audioElement2 = document.getElementById("typingAudio");
-    audioElement2.load();
-    audioElement2.play();
   }, []);
-
   useEffect(() => {
     setState(linesLeft[line].length ? "left" : "right");
     const interval = setInterval(() => {
@@ -114,7 +99,6 @@ const Ending = () => {
     ) {
       clearInterval(interval);
     }
-
     return () => clearInterval(interval);
   });
 
@@ -122,7 +106,7 @@ const Ending = () => {
     <div className="home">
       <ReactAudioPlayer
         id="endingAudio"
-        src={"/audio/ending.mp3"}
+        src={"/audio/scenario.mp3"}
         autoPlay={true}
         loop
       />
@@ -163,16 +147,9 @@ const Ending = () => {
             src={`/images/${images[index].character}`}
             alt=""
           />
-
           <div className="line">
-            <img className="namebox-l" src={`/images/namebox.png`} alt="" />
-            <img className="name-l" src={`/images/name.png`} alt="" />
-            {(line > 1 && line < 13) && (
-              <>
-                <img className="namebox-r" src={`/images/namebox.png`} alt="" />
-                <img className="name-r" style={{left: '78%'}}src={`/images/god.png`} alt="" />
-              </>
-            )}
+            <img className="namebox" src={`/images/namebox.png`} alt="" />
+            <img className="name" src={`/images/name.png`} alt="" />
             <div className="line-left">{state === "left" ? text : ""}</div>
             <div className="line-right">{state === "right" ? text : ""}</div>
           </div>
@@ -206,5 +183,4 @@ const Ending = () => {
     </div>
   );
 };
-
 export default Ending;
