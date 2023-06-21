@@ -139,7 +139,6 @@ const Ending = () => {
         />
       )}
 
-
       <ReactAudioPlayer
          id="typingAudio"
          src={"/audio/effect/typing.mp3"}
