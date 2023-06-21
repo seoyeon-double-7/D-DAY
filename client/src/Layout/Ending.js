@@ -83,9 +83,10 @@ const Ending = () => {
     navigate("/footprint");
   };
   useEffect(() => {
-    const audioElement = document.getElementById("endingAudio");
-    audioElement.play();
+    // const audioElement = document.getElementById("endingAudio");
+    // audioElement.play();
   }, []);
+  
   useEffect(() => {
     setState(linesLeft[line].length ? "left" : "right");
     const interval = setInterval(() => {
@@ -104,18 +105,19 @@ const Ending = () => {
 
   return (
     <div className="home">
-      {index < 0 && index > 3 && (
+      {index > 0 && index < 3 && (
         <ReactAudioPlayer
         id="endingAudio"
-        src={"/audio/scenario.mp3"}
+        src={"/audio/engind.mp3"}
         autoPlay={true}
+        style={{ display: "play" }}
         loop
         />
       )}
 
       {index > 2 && (
         <ReactAudioPlayer
-        id="endingAudio"
+        id="creditAudio"
         src={"/audio/credit.mp3"}
         autoPlay={true}
         loop
@@ -179,9 +181,15 @@ const Ending = () => {
             src={`/images/${images[index].character}`}
             alt=""
           />
-          <div className="line">
-            <img className="namebox" src={`/images/namebox.png`} alt="" />
-            <img className="name" src={`/images/name.png`} alt="" />
+         <div className="line">
+            <img className="namebox-l" src={`/images/namebox.png`} alt="" />
+            <img className="name-l" src={`/images/name.png`} alt="" />
+            {(line > 1 && line < 13) && (
+              <>
+                <img className="namebox-r" src={`/images/namebox.png`} alt="" />
+                <img className="name-r" style={{left: '78%'}}src={`/images/god.png`} alt="" />
+              </>
+            )}
             <div className="line-left">{state === "left" ? text : ""}</div>
             <div className="line-right">{state === "right" ? text : ""}</div>
           </div>
