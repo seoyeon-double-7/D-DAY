@@ -67,6 +67,13 @@ const Ending = () => {
   // 엔딩 화면 전환 이펙트
   const changeScreen = () => {
     setLine((i) => i + 1);
+    console.log("타이핑")
+    // 타이핑 효과음
+    if(index < 2){
+      const audioElement = document.getElementById("typingAudio");
+      audioElement.play();
+    }
+
     setText("");
     setCount(0);
     if (line == 1 || line == 12 || line == 14 || line == 15)
@@ -83,8 +90,8 @@ const Ending = () => {
     navigate("/footprint");
   };
   useEffect(() => {
-    // const audioElement = document.getElementById("endingAudio");
-    // audioElement.play();
+      const audioElement = document.getElementById("typingAudio");
+      audioElement.play();
   }, []);
   
   useEffect(() => {
@@ -105,13 +112,13 @@ const Ending = () => {
 
   return (
     <div className="home">
-      {index > 0 && index < 3 && (
+      {index < 3 && (
         <ReactAudioPlayer
         id="endingAudio"
-        src={"/audio/engind.mp3"}
+        src={"/audio/ending.mp3"}
         autoPlay={true}
-        style={{ display: "play" }}
         loop
+        style={{ display: "play" }}
         />
       )}
 
@@ -142,8 +149,7 @@ const Ending = () => {
           loop={false}
           style={{ display: "play" }}
         />
-        </>
-      )}
+        </> )}
 
       <img className="bg" src={`/images/${images[index].bg}`} alt="" />
 
