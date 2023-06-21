@@ -23,28 +23,28 @@ const Opening = () => {
     "",
     "그야 쉬어야지!",
     "",
-    "그럼!! 준비할건 다했지!! 하지만 생각보다 안되는 거 너도 알잖아.. 몰라 잘꺼야",
-    "흠냐…벌써 점심시간이야..? 깨워 좀 주지ㅡㅡ",
-    "어!!! 여기 의사쌤이 왜?? 저는 왜 여기에 있는거죠??",
+    "그럼, 준비할건 다했지! 하지만 생각보다 안되네 몰라 잘꺼야",
+    "흠냐… 벌써 점심시간이야? 깨워 주지ㅡㅡ",
+    "어! 여기 의사쌤이 왜? 저는 왜 여기에 있는거죠",
     "",
     "",
-    "어..어쩌다가 이렇게됐지?? 난 분명 학교에서…학교?? 아ㅏ기억이 안나..",
-    "아! 휴대폰! 그래 빨리 집이나 가야겠다 더 이상 이런 곳에 있기싫어!",
-    "아니..내 폰..아니라 왠 지도? 근데 뭐 이렇게 이상하게 생겼지??",
+    "어.. 어쩌다가 이렇게 됐지? 난 분명 학교에서…학교? 아 기억이 안나..",
+    "아, 휴대폰! 그래 빨리 집이나 가야겠다 더 이상 이런 곳에 있기 싫어!",
+    "아니, 내 폰이..아니라 왠 지도?",
     "",
-    "나 지금 지도속으로 들어온건가??",
+    "나 지금 지도 속으로 들어온건가?",
     "무슨 일인진 모르겠지만 얼른 집으로 가야겠다",
   ];
 
   const linesRight = [
     "야야 오늘 자습이라는데 너 뭐할거야?",
     "",
-    "에이 애들이 다 취업가서 수업을 안 하는건데, 넌 취업 준비 다 했어~?",
+    "에이 애들이 다 면접가서 수업을 안 하는건데, 넌 면접 준비 다 했어?",
     "",
     "",
     "",
     "이런 너무 놀라셔서 잠시 기억을 잃으신것 같군요..",
-    "진정하고 심호흡하세요, 오늘은 당신 마지막 날입니다..당신이 하고싶은거 하세요",
+    "진정하고 심호흡하세요, 오늘은 당신 마지막 날입니다.. 당신이 하고싶은 것 다 하세요",
     "",
     "",
     "",
@@ -55,11 +55,11 @@ const Opening = () => {
 
   const character_name = ["", "doctor.png", "grandfather.png"];
   const character_name_location = ["", "77%", "75.6%"];
-  
-  function changeScreen(){
+
+  function changeScreen() {
     setLine((i) => i + 1);
-    
-    console.log("타이핑")
+
+    console.log("타이핑");
     // 타이핑 효과음
     const audioElement = document.getElementById("typingAudio");
     audioElement.load();
@@ -70,7 +70,7 @@ const Opening = () => {
     if (line === 3 || line === 7 || line === 11 || line === 13)
       setIndex((i) => i + 1);
     if (line === 13) goHome();
-  };
+  }
 
   function goHome() {
     navigate("/");
@@ -82,7 +82,6 @@ const Opening = () => {
     const audioElement2 = document.getElementById("typingAudio");
     audioElement2.load();
     audioElement2.play();
-    
   }, []);
 
   useEffect(() => {
@@ -112,22 +111,22 @@ const Opening = () => {
       />
 
       <ReactAudioPlayer
-         id="typingAudio"
-         src={"/audio/effect/typing.mp3"}
-         autoPlay={false}
+        id="typingAudio"
+        src={"/audio/effect/typing.mp3"}
+        autoPlay={false}
         loop={false}
-         style={{ display: "none" }}
-       />
+        style={{ display: "none" }}
+      />
 
       {index < 1 && (
         <>
-        <ReactAudioPlayer
-          id="typingAudio"
-          src={"/audio/effect/typing.mp3"}
-          autoPlay={false}
-          loop={false}
-          style={{ display: "play" }}
-        />
+          <ReactAudioPlayer
+            id="typingAudio"
+            src={"/audio/effect/typing.mp3"}
+            autoPlay={false}
+            loop={false}
+            style={{ display: "play" }}
+          />
         </>
       )}
 
@@ -151,16 +150,23 @@ const Opening = () => {
       <div className="line">
         <img className="namebox-l" src={`/images/namebox.png`} alt="" />
         <img className="name-l" src={`/images/name.png`} alt="" />
-        {(line > -1 && line < 4) && (
+        {line > -1 && line < 4 && (
           <>
             <img className="namebox-r" src={`/images/namebox.png`} alt="" />
             <img className="name-r" src={`/images/friend.png`} alt="" />
           </>
         )}
-        {(line > 3 && line < 12)&& (
+        {line > 3 && line < 12 && (
           <>
             <img className="namebox-r" src={`/images/namebox.png`} alt="" />
-            <img className="name-r" src={`/images/${index === 0 ? character_name[0] : character_name[index]}`} style={{left: character_name_location[index]}} alt="" />
+            <img
+              className="name-r"
+              src={`/images/${
+                index === 0 ? character_name[0] : character_name[index]
+              }`}
+              style={{ left: character_name_location[index] }}
+              alt=""
+            />
           </>
         )}
         <div className="line-left">{state === "left" ? text : ""}</div>

@@ -21,20 +21,20 @@ const Ending = () => {
   // 엔딩 왼쪽 스크립트
   const linesLeft = [
     "이대로 모든게 끝나는 건가?",
-    "앗 갑자기 빛이??",
+    "앗 갑자기 빛이?",
     "",
-    "어..할아버지?",
+    "할아버지?",
     "",
-    "확실히 제가 지금 죽은거죠",
+    "제가 지금 죽게 된거죠",
     "",
-    "너?? 그게 무슨소리세요??",
+    "네!? 그게 무슨소리세요?",
     "",
-    "설마 처음부터 모든게 다 거짓말이었어요!!? 제가 얼마나 힘들게 왔는데!!",
+    "설마 처음부터 모든게 다 거짓말이었어요? 제가 얼마나 힘들게 왔는데!",
     "",
-    "네!! 덕분에 전 친구의 소중함, 저의 진정한 사람, 우리 가족의 행복, 마지막으로 제 삶의 이유까지 잃어버린걸 되찾는 기분이었어요.",
+    "덕분에 친구의 소중함, 진정한 사랑, 가족의 행복, 삶의 이유까지 잊어버렸던 하루의 가치를 되찾는 기분이었어요.",
     "",
-    "돌아왔네..",
-    "생각보다 긴 꿈이었다..",
+    "돌아왔네, 생각보다 긴 꿈이었다..",
+    "좋아 결심했어, 하루를 소중히하기로. 매일매일이 우리에겐 D-DAY!",
     "",
     "",
   ];
@@ -67,9 +67,9 @@ const Ending = () => {
   // 엔딩 화면 전환 이펙트
   const changeScreen = () => {
     setLine((i) => i + 1);
-    console.log("타이핑")
+    console.log("타이핑");
     // 타이핑 효과음
-    if(index < 2){
+    if (index < 2) {
       const audioElement = document.getElementById("typingAudio");
       audioElement.play();
     }
@@ -90,10 +90,10 @@ const Ending = () => {
     navigate("/footprint");
   };
   useEffect(() => {
-      const audioElement = document.getElementById("typingAudio");
-      audioElement.play();
+    const audioElement = document.getElementById("typingAudio");
+    audioElement.play();
   }, []);
-  
+
   useEffect(() => {
     setState(linesLeft[line].length ? "left" : "right");
     const interval = setInterval(() => {
@@ -114,42 +114,43 @@ const Ending = () => {
     <div className="home">
       {index < 3 && (
         <ReactAudioPlayer
-        id="endingAudio"
-        src={"/audio/ending.mp3"}
-        autoPlay={true}
-        loop
-        style={{ display: "play" }}
+          id="endingAudio"
+          src={"/audio/ending.mp3"}
+          autoPlay={true}
+          loop
+          style={{ display: "play" }}
         />
       )}
 
       {index > 2 && (
         <ReactAudioPlayer
-        id="creditAudio"
-        src={"/audio/credit.mp3"}
-        autoPlay={true}
-        loop
-        style={{ display: "play" }}
+          id="creditAudio"
+          src={"/audio/credit.mp3"}
+          autoPlay={true}
+          loop
+          style={{ display: "play" }}
         />
       )}
 
       <ReactAudioPlayer
-         id="typingAudio"
-         src={"/audio/effect/typing.mp3"}
-         autoPlay={false}
+        id="typingAudio"
+        src={"/audio/effect/typing.mp3"}
+        autoPlay={false}
         loop={false}
-         style={{ display: "none" }}
-       />
+        style={{ display: "none" }}
+      />
 
       {index < 1 && (
         <>
-        <ReactAudioPlayer
-          id="typingAudio"
-          src={"/audio/effect/typing.mp3"}
-          autoPlay={false}
-          loop={false}
-          style={{ display: "play" }}
-        />
-        </> )}
+          <ReactAudioPlayer
+            id="typingAudio"
+            src={"/audio/effect/typing.mp3"}
+            autoPlay={false}
+            loop={false}
+            style={{ display: "play" }}
+          />
+        </>
+      )}
 
       <img className="bg" src={`/images/${images[index].bg}`} alt="" />
 
@@ -187,13 +188,18 @@ const Ending = () => {
             src={`/images/${images[index].character}`}
             alt=""
           />
-         <div className="line">
+          <div className="line">
             <img className="namebox-l" src={`/images/namebox.png`} alt="" />
             <img className="name-l" src={`/images/name.png`} alt="" />
-            {(line > 1 && line < 13) && (
+            {line > 1 && line < 13 && (
               <>
                 <img className="namebox-r" src={`/images/namebox.png`} alt="" />
-                <img className="name-r" style={{left: '78%'}}src={`/images/god.png`} alt="" />
+                <img
+                  className="name-r"
+                  style={{ left: "78%" }}
+                  src={`/images/god.png`}
+                  alt=""
+                />
               </>
             )}
             <div className="line-left">{state === "left" ? text : ""}</div>

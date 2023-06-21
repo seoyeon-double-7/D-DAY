@@ -65,7 +65,7 @@
 }
 
 /* rank */
-.rank {
+/* .rank {
   position: absolute;
   width: 6%;
   height: 6%;
@@ -76,7 +76,7 @@
   background-size: contain;
   background-repeat: no-repeat;
   cursor: pointer;
-}
+} */
 
 /* .sign-up{
   position: absolute;

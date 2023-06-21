@@ -22,7 +22,7 @@ function App() {
   const NewLoginPage = Auth(LoginPage, false);
   const NewRegisterPage = Auth(RegisterPage, false);
   const NewFootPrintPage = Auth(FootPrintPage, true);
-  const NewRankPage = Auth(RankPage, true);
+  // const NewRankPage = Auth(RankPage, true);
   const NewMyPage = Auth(MyPage, true);
 
   return (
@@ -37,10 +37,10 @@ function App() {
           <Route exact path="/footprint" element={<NewFootPrintPage />} />
           <Route exact path="/opening" element={<Opening />} />
           <Route exact path="/ending" element={<Ending />} />
-          <Route exact path="/ranking" element={<NewRankPage />} />
+          {/* <Route exact path="/ranking" element={<NewRankPage />} /> */}
           <Route exact path="/mypage" element={<NewMyPage />} />
-          <Route exact path="/d-day" element={<GamePage />} />
-          <Route exact path="/d-day/clear" element={<GameClear />} />
+          {/* <Route exact path="/d-day" element={<GamePage />} /> */}
+          {/* <Route exact path="/d-day/clear" element={<GameClear />} /> */}
         </Routes>
       </Router>
     </div>

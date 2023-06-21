@@ -30,9 +30,9 @@ function Nav() {
   };
 
   // 랭킹 화면 이동
-  const navigateToRank = () => {
-    navigate("/ranking");
-  };
+  // const navigateToRank = () => {
+  //   navigate("/ranking");
+  // };
 
   const navigateToLogin = () => {
     navigate("/login");
@@ -41,8 +41,6 @@ function Nav() {
   const navigateToMyPage = () => {
     navigate("/mypage");
   };
-
-  // console.log(isExistUser(user) && user.isAuth);
   return (
     <nav>
       <div className="logo" onClick={navigateToHome}></div>
@@ -59,7 +57,7 @@ function Nav() {
         />
 
         {/* 랭킹 넣어주기 */}
-        <div className="rank" onClick={navigateToRank}></div>
+        {/* <div className="rank" onClick={navigateToRank}></div> */}
         {/*
          * 로그인 되있으면 마이페이지
          * TODO : db에서 사용자 이미지 가져와서 보여주기
