@@ -17,7 +17,7 @@
 
 <img src="https://img.shields.io/badge/React-black?style=for-the-badge&logo=React&logoColor=#61DAFB"/>  <img src="https://img.shields.io/badge/Javascript-black?style=for-the-badge&logo=Javascript&logoColor=#61DAFB"/>  
 <img src="https://img.shields.io/badge/Canvas-black?style=for-the-badge&logo=Canvas&logoColor=#61DAFB"/>
-  <img src="https://img.shields.io/badge/Axios-black?style=for-the-badge&logo=Axios&logoColor=#61DAFB"/>  <img src="https://img.shields.io/badge/ESLint-black?style=for-the-badge&logo=ESLint&logoColor=#61DAFB"/>  <img src="https://img.shields.io/badge/Prettier-black?style=for-the-badge&logo=Prettier&logoColor=#61DAFB"/>
+  <img src="https://img.shields.io/badge/Redux-black?style=for-the-badge&logo=Axios&logoColor=#61DAFB"/>  <img src="https://img.shields.io/badge/ESLint-black?style=for-the-badge&logo=ESLint&logoColor=#61DAFB"/>  <img src="https://img.shields.io/badge/Prettier-black?style=for-the-badge&logo=Prettier&logoColor=#61DAFB"/>
 
 
 **BE**
